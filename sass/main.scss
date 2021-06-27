@@ -1,0 +1,133 @@
+@import 'base';
+
+//@include
+//&
+
+
+.header-wrapper{
+    border: 1px solid black;
+    height: 8vh;
+    .header-wrap{
+        width: 100%;
+        height: 100%;
+        @include fx($h: $SB,$v:$CT);
+        padding: 0 1em;
+        .logo-wrap{
+            font-size: 2em;
+            @include fx($h: $SB,$v:$CT);
+            .logo{
+                padding: 0 1em;
+            }
+        }
+        .search-wrap{
+            border: none;
+            @include MD{
+                margin: 0 auto;
+            }
+            @include XS{
+                display: none;
+            }
+            .input-wrap{
+                @include fx($v:$CT);
+                height: 32px;
+                border: 1px solid black;
+                padding: 0;
+                border-radius: 0.5em;
+                .search{
+                    width: 280px;
+                    height: 30px;
+                    border: none;
+                    border-radius: 0.5em;
+                    padding-left: 0.5em;
+                }
+                .search_button{
+                    border: none;
+                    width: 30px;
+                    height: 30px;
+                    border-left: 1px solid black;
+                    @include fx($h:$CT,$v:$CT);
+                }
+            }
+            
+        }
+        .menu-wrap{
+            @include MD{
+                display: none;
+            }
+            .write{
+                font-size: 2em;
+            }
+
+        }
+    }
+   
+}
+
+.center-wrapper{
+    @include fx;
+    position: relative;
+    height: 92vh;
+    .side-wrapper{
+        border: 1px solid black;
+        width: 180px;
+        overflow-y: scroll;
+        @include MD{
+            position: absolute;
+            left: -9999px;
+            z-index: 1;
+        }
+        .category{
+            padding: 0 10px;
+            .category-header{
+                padding-top: 10px;
+                @include fx($h: $SB);
+                font-weight: bold;
+            }
+            li{
+                padding: 3px 0;
+                p{
+                    display: inline;
+                }
+            }
+        }
+    }
+    .content-wrapper{
+        border: 1px solid black;
+        width: calc(100% - 180px);
+        overflow-y: scroll;
+        @include MD{
+            width: 100vw;
+        }
+        .content-wrap{
+            display: flex;
+            flex-wrap: wrap; 
+            width: 102%;
+            margin: 0 auto;
+            
+            padding: 30px 30px;
+            .content{
+                border: 1px solid black;
+                width: 23%;
+                height: 190px;
+                margin-right: 2%;
+                margin-bottom: 2%;
+                @include LG{
+                    width: 31%;
+                    height: 240px;
+                }
+                @include MD{
+                    width: 31%;
+                    height: 220px;
+                }
+                @include SM{
+                    width: 48%;
+                    height: 260px;
+                }
+                @include XS{
+                    width: 98%;
+                    height: 300px;
+                }
+            }
+        }
+    }
+}
