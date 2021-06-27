@@ -95,6 +95,7 @@
         border: 1px solid black;
         width: calc(100% - 180px);
         overflow-y: scroll;
+        overflow-x: hidden;
         @include MD{
             width: 100vw;
         }
@@ -103,7 +104,6 @@
             flex-wrap: wrap; 
             width: 102%;
             margin: 0 auto;
-            
             padding: 30px 30px;
             .content{
                 border: 1px solid black;

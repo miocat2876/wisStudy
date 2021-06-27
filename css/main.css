@@ -229,6 +229,7 @@ a:link, a:visited, a:hover, a:active {
   border: 1px solid black;
   width: calc(100% - 180px);
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 @media screen and (max-width: 992px) {
