@@ -251,7 +251,7 @@ a:link, a:visited, a:hover, a:active {
 .center-wrapper .content-wrapper .content-wrap .content {
   border: 1px solid black;
   width: 23%;
-  height: 190px;
+  height: 240px;
   margin-right: 2%;
   margin-bottom: 2%;
 }
@@ -259,27 +259,27 @@ a:link, a:visited, a:hover, a:active {
 @media screen and (max-width: 1200px) {
   .center-wrapper .content-wrapper .content-wrap .content {
     width: 31%;
-    height: 240px;
+    height: 280px;
   }
 }
 
 @media screen and (max-width: 992px) {
   .center-wrapper .content-wrapper .content-wrap .content {
     width: 31%;
-    height: 220px;
+    height: 320px;
   }
 }
 
 @media screen and (max-width: 768px) {
   .center-wrapper .content-wrapper .content-wrap .content {
     width: 48%;
-    height: 260px;
+    height: 360px;
   }
 }
 
 @media screen and (max-width: 576px) {
   .center-wrapper .content-wrapper .content-wrap .content {
     width: 98%;
-    height: 300px;
+    height: 400px;
   }
 }

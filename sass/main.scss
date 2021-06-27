@@ -108,24 +108,24 @@
             .content{
                 border: 1px solid black;
                 width: 23%;
-                height: 190px;
+                height: 240px;
                 margin-right: 2%;
                 margin-bottom: 2%;
                 @include LG{
                     width: 31%;
-                    height: 240px;
+                    height: 280px;
                 }
                 @include MD{
                     width: 31%;
-                    height: 220px;
+                    height: 320px;
                 }
                 @include SM{
                     width: 48%;
-                    height: 260px;
+                    height: 360px;
                 }
                 @include XS{
                     width: 98%;
-                    height: 300px;
+                    height: 400px;
                 }
             }
         }
