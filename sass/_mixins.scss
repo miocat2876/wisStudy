@@ -120,6 +120,28 @@
 	
 }
 
+@mixin HXL {
+	@media screen and(max-height:$XL) {
+		@content;
+		
+	}
+	
+}
+@mixin HLG {
+	@media screen and(max-height:$LG) {
+		@content;
+		
+	}
+	
+}
+@mixin HMD {
+	@media screen and(max-height:$MD) {
+		@content;
+		
+	}
+	
+}
+
 @mixin HSM {
 	@media screen and(max-height:$SM) {
 		@content;
@@ -127,7 +149,6 @@
 	}
 	
 }
-
 @mixin HXS {
 	@media screen and(max-height:$XS) {
 		@content;
