@@ -316,7 +316,7 @@ a:link, a:visited, a:hover, a:active {
   }
 }
 
-.search-info {
+.up-arrow {
   position: fixed;
   bottom: 1%;
   right: 2%;
@@ -327,16 +327,9 @@ a:link, a:visited, a:hover, a:active {
   flex-wrap: wrap;
 }
 
-.search-info i {
+.up-arrow a i {
   font-size: 2em;
   margin-left: 0.125em;
-}
-
-.search-info .search-info-wrap input {
-  border-radius: 0.5em;
-  padding-left: 0.5em;
-  border: none;
-  box-shadow: 1px 1px 1px 1px black;
 }
 
 .popup-wrap {

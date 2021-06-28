@@ -217,22 +217,36 @@
     }
 }
 
-.search-info{
+// .search-info{
+//     position: fixed;
+//     bottom: 1%;
+//     right: 2%;
+//     z-index: 2;
+//     @include fx($v: $CT);
+//     i{
+//         font-size: 2em;
+//         margin-left: 0.125em;
+//     }
+//     .search-info-wrap{
+//         input{
+//             border-radius: 0.5em;
+//             padding-left: 0.5em;
+//             border: none;
+//             box-shadow: 1px 1px 1px 1px black;
+//         }
+//     }
+// }
+
+.up-arrow{
     position: fixed;
     bottom: 1%;
     right: 2%;
     z-index: 2;
     @include fx($v: $CT);
-    i{
-        font-size: 2em;
-        margin-left: 0.125em;
-    }
-    .search-info-wrap{
-        input{
-            border-radius: 0.5em;
-            padding-left: 0.5em;
-            border: none;
-            box-shadow: 1px 1px 1px 1px black;
+    a{
+        i{
+            font-size: 2em;
+            margin-left: 0.125em;
         }
     }
 }
