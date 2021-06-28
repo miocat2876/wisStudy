@@ -27,6 +27,9 @@
             .logo-wrap{
                 font-size: 2em;
                 @include fx($h: $SB,$v:$CT);
+                .panel{
+
+                }
                 .logo{
                     padding: 0 1em;
                 }
@@ -82,7 +85,9 @@
         .side-wrapper{
             border: 1px solid black;
             width: 180px;
+            height:100%;
             overflow-y: scroll;
+            background-color: white;
             @include MD{
                 position: absolute;
                 left: -9999px;
@@ -106,8 +111,9 @@
         .content-wrapper{
             border: 1px solid black;
             width: calc(100% - 180px);
-            overflow-y: scroll;
             overflow-x: hidden;
+            overflow-y: scroll;
+            height:100%;
             @include MD{
                 width: 100vw;
             }

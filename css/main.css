@@ -156,7 +156,9 @@ a:link, a:visited, a:hover, a:active {
 .wrap .center-wrapper .side-wrapper {
   border: 1px solid black;
   width: 180px;
+  height: 100%;
   overflow-y: scroll;
+  background-color: white;
 }
 
 @media screen and (max-width: 992px) {
@@ -191,8 +193,9 @@ a:link, a:visited, a:hover, a:active {
 .wrap .center-wrapper .content-wrapper {
   border: 1px solid black;
   width: calc(100% - 180px);
-  overflow-y: scroll;
   overflow-x: hidden;
+  overflow-y: scroll;
+  height: 100%;
 }
 
 @media screen and (max-width: 992px) {

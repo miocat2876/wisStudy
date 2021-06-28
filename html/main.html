@@ -17,7 +17,7 @@
         <header class="header-wrapper">
             <div class="header-wrap">
                 <div class="logo-wrap">
-                    <p>
+                    <p class="panel">
                         <i class="fas fa-align-justify"></i>
                     </p>
                     <span class="logo">
@@ -132,6 +132,50 @@
                     </div>
                     <div class="content">
                     </div>
+                    <div class="content">
+                    </div>
+                    <div class="content">
+                    </div>
+                    <div class="content">
+                    </div>
+                    <div class="content">
+                    </div>
+                    <div class="content">
+                    </div>
+                    <div class="content">
+                    </div>
+                    <div class="content">
+                    </div>
+                    <div class="content">
+                    </div>
+                    <div class="content">
+                    </div>
+                    <div class="content">
+                    </div>
+                    <div class="content">
+                    </div>
+                    <div class="content">
+                    </div>
+                    <div class="content">
+                    </div>
+                    <div class="content">
+                    </div>
+                    <div class="content">
+                    </div>
+                    <div class="content">
+                    </div>
+                    <div class="content">
+                    </div>
+                    <div class="content">
+                    </div>
+                    <div class="content">
+                    </div>
+                    <div class="content">
+                    </div>
+                    <div class="content">
+                    </div>
+                    <div class="content">
+                    </div>
                 </div>
             </div>
         </div>
@@ -220,10 +264,13 @@
             $("#startDate").datepicker();
             $("#endDate").datepicker();
 
-
-
-
-
+            $(".panel").click(function(){
+                console.log($(".side-wrapper").css("left"));
+                if($(".side-wrapper").css("left") === '0px')
+                    $(".side-wrapper").css("left","-9999px");
+                else
+                    $(".side-wrapper").css("left","0");
+            });
 
             $(".write").click(function(){
                 popupManagement({"display":"block"},function(){
