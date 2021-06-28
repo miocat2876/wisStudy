@@ -233,33 +233,41 @@ a:link, a:visited, a:hover, a:active {
 .wrap .center-wrapper .content-wrapper .content-wrap .content {
   border: 1px solid black;
   width: 23%;
-  height: 240px;
+  height: 260px;
   margin-right: 2%;
   margin-bottom: 2%;
 }
 
 .wrap .center-wrapper .content-wrapper .content-wrap .content .info-wrap {
   font-size: 1em;
-  text-align: center;
 }
 
 .wrap .center-wrapper .content-wrapper .content-wrap .content .info-wrap .image-wrap img {
   height: 120px;
 }
 
-.wrap .center-wrapper .content-wrapper .content-wrap .content .info-wrap .title {
+.wrap .center-wrapper .content-wrapper .content-wrap .content .info-wrap .info {
+  padding: 0.5em;
+}
+
+.wrap .center-wrapper .content-wrapper .content-wrap .content .info-wrap .info .title {
   font-weight: bold;
   margin: 0.625em 0;
+  text-align: center;
 }
 
 .wrap .center-wrapper .content-wrapper .content-wrap .content .info-wrap .info div {
   padding: 0.125em 0;
 }
 
+.wrap .center-wrapper .content-wrapper .content-wrap .content .info-wrap .info div span::after {
+  content: " / ";
+}
+
 @media screen and (max-width: 1200px) {
   .wrap .center-wrapper .content-wrapper .content-wrap .content {
     width: 31%;
-    height: 280px;
+    height: 300px;
   }
   .wrap .center-wrapper .content-wrapper .content-wrap .content .info-wrap {
     font-size: 1.125em;
@@ -272,7 +280,7 @@ a:link, a:visited, a:hover, a:active {
 @media screen and (max-width: 992px) {
   .wrap .center-wrapper .content-wrapper .content-wrap .content {
     width: 31%;
-    height: 320px;
+    height: 340px;
   }
   .wrap .center-wrapper .content-wrapper .content-wrap .content .info-wrap {
     font-size: 1.25em;
@@ -285,7 +293,7 @@ a:link, a:visited, a:hover, a:active {
 @media screen and (max-width: 768px) {
   .wrap .center-wrapper .content-wrapper .content-wrap .content {
     width: 48%;
-    height: 360px;
+    height: 380px;
   }
   .wrap .center-wrapper .content-wrapper .content-wrap .content .info-wrap {
     font-size: 1.375em;
@@ -298,10 +306,10 @@ a:link, a:visited, a:hover, a:active {
 @media screen and (max-width: 576px) {
   .wrap .center-wrapper .content-wrapper .content-wrap .content {
     width: 98%;
-    height: 400px;
+    height: 420px;
   }
   .wrap .center-wrapper .content-wrapper .content-wrap .content .info-wrap {
-    font-size: 1.625em;
+    font-size: 1.5em;
   }
   .wrap .center-wrapper .content-wrapper .content-wrap .content .info-wrap .image-wrap img {
     height: 200px;

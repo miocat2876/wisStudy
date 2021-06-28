@@ -135,31 +135,37 @@
                 .content{
                     border: 1px solid black;
                     width: 23%;
-                    height: 240px;
+                    height: 260px;
                     margin-right: 2%;
                     margin-bottom: 2%;
                     .info-wrap{
                         font-size: 1em;
-                        text-align: center;
                         .image-wrap{
                             img{
                                 height: 120px;
                             }
                         }
-                        .title{
-                            font-weight: bold;
-                            margin: 0.625em 0;
-                        }
                         .info{
+                            padding: 0.5em;
+                            .title{
+                                font-weight: bold;
+                                margin: 0.625em 0;
+                                text-align: center;
+                            }
                             div{
                                 padding: 0.125em 0;
+                                span{
+                                    &::after{
+                                        content: " / ";
+                                    }
+                                }
                             }
                             
                         }
                     }
                     @include LG{
                         width: 31%;
-                        height: 280px;
+                        height: 300px;
                         .info-wrap{
                             font-size: 1.125em;
                             .image-wrap{
@@ -171,7 +177,7 @@
                     }
                     @include MD{
                         width: 31%;
-                        height: 320px;
+                        height: 340px;
                         .info-wrap{
                             font-size: 1.25em;
                             .image-wrap{
@@ -183,7 +189,7 @@
                     }
                     @include SM{
                         width: 48%;
-                        height: 360px;
+                        height: 380px;
                         .info-wrap{
                             font-size: 1.375em;
                             .image-wrap{
@@ -195,9 +201,9 @@
                     }
                     @include XS{
                         width: 98%;
-                        height: 400px;
+                        height: 420px;
                         .info-wrap{
-                            font-size: 1.625em;
+                            font-size: 1.5em;
                             .image-wrap{
                                 img{
                                     height: 200px;
