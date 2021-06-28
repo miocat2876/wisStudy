@@ -168,7 +168,8 @@
 .popup-wrap{
     @include center(150);
     border: solid 1px black;
-    width: 95vw;
+    margin-top: 10vw;
+    width: 90vw;
     background-color: white;
     display: none;
     .write-popup{
