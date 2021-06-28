@@ -299,15 +299,7 @@
                 height: 180px;
                 resize: none;
             }
-            .button-wrap{
-                @include fx($h:$CT);
-                .write-button{
-                    border: 1px solid black;
-                    font-size: 1.25em;
-                    margin: 0 0.25em;
-                    cursor: pointer;
-                }
-            }
+
             
             
         }
@@ -317,5 +309,13 @@
         display: none;
     }
 
-
+    .button-wrap{
+        @include fx($h:$CT);
+        .popup_button{
+            border: 1px solid black;
+            font-size: 1.25em;
+            margin: 0 0.25em;
+            cursor: pointer;
+        }
+    }
 }

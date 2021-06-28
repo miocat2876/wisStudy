@@ -208,17 +208,17 @@
     <div class="popup-wrap">
         <div class="write-popup">
             <form action="">
-                <input type="text" id="" name="" placeholder="제목ddddd">
+                <input type="text" id="" name="" placeholder="제목">
                 <input type="password" id="" name="" placeholder="비밀번호">
                 <p></p>
                 <div class="date">
                     <fieldset>
-                        <input type="text" class="calendar" name="startDate" placeholder="">
+                        <input type="text" class="calendar" name="startDate" placeholder="시작일">
                         <i class="far fa-calendar-alt"></i>
                     </fieldset>
                     <p>&nbsp;~&nbsp;</p>
                     <fieldset>
-                        <input type="text" class="calendar" name="endDate" placeholder="">
+                        <input type="text" class="calendar" name="endDate" placeholder="종료일">
                         <i class="far fa-calendar-alt"></i>
                     </fieldset>
                 </div>
@@ -231,13 +231,13 @@
                             <option value="00001">서울</option>
                         </select>
                     </div>
-                    <div class="duration selectbox">
+                    <!-- <div class="duration selectbox">
                         <p>진행기간</p>
                         <select name="" id="duration">
                             <option value="00000">선택</option>
                             <option value="00001">2주</option>
                         </select>
-                    </div>
+                    </div> -->
                     <div class="person selectbox">
                         <p>인원</p>
                         <select name="" id="person">
@@ -263,13 +263,22 @@
                 <textarea id="" name="" placeholder=""></textarea>
                 <input type="file" name="" id="">
                 <div class="button-wrap">
-                    <button type="submit" class="write-button">제출</button>
-                    <button type="button" class="write-button exit">닫기</button>
+                    <button type="submit" class="popup_button write-button">제출</button>
+                    <button type="button" class="popup_button write-button exit">닫기</button>
                 </div>
             </form>
         </div>
         <div class="view-popup">
-
+            제목
+            기간
+            언어
+            분야
+            인원
+            장소
+            <div class="button-wrap">
+                <button type="submit" class="popup_button view-button">제출</button>
+                <button type="button" class="popup_button view-button exit">닫기</button>
+            </div>
         </div>
 
 
@@ -291,6 +300,12 @@
             $(".content").click(function(){
                 popupManagement({"display":"block"},function(){
                     $(".view-popup").css("display","block");
+                })
+            });
+
+            $(".view-button.exit").click(function(){
+                popupManagement({"display":"none"},function(){
+                    $(".view-popup").css("display","none");
                 })
             });
 

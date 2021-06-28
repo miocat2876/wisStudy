@@ -430,21 +430,21 @@ a:link, a:visited, a:hover, a:active {
   resize: none;
 }
 
-.popup-wrap .write-popup form .button-wrap {
+.popup-wrap .view-popup {
+  height: 90vh;
+  display: none;
+}
+
+.popup-wrap .button-wrap {
   display: flex;
   justify-content: center;
   align-items: stretch;
   flex-wrap: wrap;
 }
 
-.popup-wrap .write-popup form .button-wrap .write-button {
+.popup-wrap .button-wrap .popup_button {
   border: 1px solid black;
   font-size: 1.25em;
   margin: 0 0.25em;
   cursor: pointer;
-}
-
-.popup-wrap .view-popup {
-  height: 90vh;
-  display: none;
 }
