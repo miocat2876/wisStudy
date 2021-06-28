@@ -133,10 +133,22 @@
                     margin-right: 2%;
                     margin-bottom: 2%;
                     .info-wrap{
+                        font-size: 1.125em;
+                        text-align: center;
                         .image-wrap{
                             img{
-                                height: 140px;
+                                height: 144px;
                             }
+                        }
+                        .title{
+                            font-weight: bold;
+                            margin: 5px 0;
+                        }
+                        .info{
+                            div{
+                                padding: 0.125em 0;
+                            }
+                            
                         }
                     }
                     @include LG{
@@ -145,7 +157,7 @@
                         .info-wrap{
                             .image-wrap{
                                 img{
-                                    height: 170px;
+                                    height: 168px;
                                 }
                             }
                         }
@@ -155,8 +167,8 @@
                         height: 320px;
                         .info-wrap{
                             .image-wrap{
-                                .img{
-                                    height: 190px;
+                                img{
+                                    height: 192px;
                                 }
                             }
                         }
@@ -166,8 +178,8 @@
                         height: 360px;
                         .info-wrap{
                             .image-wrap{
-                                .img{
-                                    height: 220px;
+                                img{
+                                    height: 216px;
                                 }
                             }
                         }
@@ -177,7 +189,7 @@
                         height: 400px;
                         .info-wrap{
                             .image-wrap{
-                                .img{
+                                img{
                                     height: 240px;
                                 }
                             }
