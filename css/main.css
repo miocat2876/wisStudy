@@ -343,12 +343,6 @@ a:link, a:visited, a:hover, a:active {
   display: none;
 }
 
-@media screen and (max-width: 576px) {
-  .popup-wrap {
-    margin-top: 10vh;
-  }
-}
-
 .popup-wrap .write-popup {
   display: none;
 }
