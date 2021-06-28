@@ -431,8 +431,33 @@ a:link, a:visited, a:hover, a:active {
 }
 
 .popup-wrap .view-popup {
-  height: 90vh;
+  padding: 0.5em;
   display: none;
+}
+
+.popup-wrap .view-popup div:not(.button-wrap) {
+  margin: 1em 0;
+  display: block;
+  border-bottom: 1px solid black;
+  padding: 1em 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.popup-wrap .view-popup div:not(.button-wrap) span {
+  font-size: 1.25em;
+  padding-right: 0.625em;
+  font-weight: bold;
+}
+
+.popup-wrap .view-popup div:not(.button-wrap) span::after {
+  content: " /";
+}
+
+.popup-wrap .view-popup div:not(.button-wrap) p {
+  font-size: 1.25em;
 }
 
 .popup-wrap .button-wrap {
