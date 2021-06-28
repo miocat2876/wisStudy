@@ -341,18 +341,8 @@ a:link, a:visited, a:hover, a:active {
   width: 90vw;
   background-color: white;
   display: none;
-}
-
-@media screen and (max-height: 768px) {
-  .popup-wrap {
-    margin-top: 10vh;
-  }
-}
-
-@media screen and (max-height: 576px) {
-  .popup-wrap {
-    margin-top: 20vh;
-  }
+  max-height: 90vh;
+  overflow-y: scroll;
 }
 
 .popup-wrap .write-popup {

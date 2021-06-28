@@ -237,14 +237,11 @@
     width: 90vw;
     background-color: white;
     display: none;
-    @include HSM{
-        margin-top: 10vh;
-    }
-    @include HXS{
-        margin-top: 20vh;
-    }
+    max-height: 90vh;
+    overflow-y: scroll;
     .write-popup{
         display: none;
+
         form{
             padding: 0.5em;
             input,select,textarea{
