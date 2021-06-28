@@ -3,131 +3,250 @@
 //@include
 //&
 
-
-.header-wrapper{
-    border: 1px solid black;
-    height: 8vh;
-    .header-wrap{
+.wrap{
+    .popup-on{
+        position: fixed;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
-        @include fx($h: $SB,$v:$CT);
-        padding: 0 1em;
-        .logo-wrap{
-            font-size: 2em;
+        background: #000;
+        opacity: .5;
+        filter: alpha(opacity=50);
+        z-index: 100;
+        display: none;
+    }   
+    .header-wrapper{
+        border: 1px solid black;
+        height: 8vh;
+        .header-wrap{
+            width: 100%;
+            height: 100%;
             @include fx($h: $SB,$v:$CT);
-            .logo{
-                padding: 0 1em;
+            padding: 0 1em;
+            .logo-wrap{
+                font-size: 2em;
+                @include fx($h: $SB,$v:$CT);
+                .logo{
+                    padding: 0 1em;
+                }
+            }
+            .search-wrap{
+                border: none;
+                @include MD{
+                    margin: 0 auto;
+                }
+                @include XS{
+                    display: none;
+                }
+                .input-wrap{
+                    @include fx($v:$CT);
+                    height: 32px;
+                    border: 1px solid black;
+                    padding: 0;
+                    border-radius: 0.5em;
+                    .search{
+                        width: 280px;
+                        height: 30px;
+                        border: none;
+                        border-radius: 0.5em;
+                        padding-left: 0.5em;
+                    }
+                    .search_button{
+                        border: none;
+                        width: 30px;
+                        height: 30px;
+                        border-left: 1px solid black;
+                        @include fx($h:$CT,$v:$CT);
+                    }
+                }
+                
+            }
+            .menu-wrap{
+                @include MD{
+                    display: none;
+                }
+                .write{
+                    font-size: 2em;
+                }
+
             }
         }
-        .search-wrap{
-            border: none;
+    
+    }
+
+    .center-wrapper{
+        @include fx;
+        position: relative;
+        height: 92vh;
+        .side-wrapper{
+            border: 1px solid black;
+            width: 180px;
+            overflow-y: scroll;
             @include MD{
-                margin: 0 auto;
+                position: absolute;
+                left: -9999px;
+                z-index: 1;
             }
-            @include XS{
-                display: none;
-            }
-            .input-wrap{
-                @include fx($v:$CT);
-                height: 32px;
-                border: 1px solid black;
-                padding: 0;
-                border-radius: 0.5em;
-                .search{
-                    width: 280px;
-                    height: 30px;
-                    border: none;
-                    border-radius: 0.5em;
-                    padding-left: 0.5em;
+            .category{
+                padding: 0 10px;
+                .category-header{
+                    padding-top: 10px;
+                    @include fx($h: $SB);
+                    font-weight: bold;
                 }
-                .search_button{
-                    border: none;
-                    width: 30px;
-                    height: 30px;
-                    border-left: 1px solid black;
-                    @include fx($h:$CT,$v:$CT);
+                li{
+                    padding: 3px 0;
+                    p{
+                        display: inline;
+                    }
+                }
+            }
+        }
+        .content-wrapper{
+            border: 1px solid black;
+            width: calc(100% - 180px);
+            overflow-y: scroll;
+            overflow-x: hidden;
+            @include MD{
+                width: 100vw;
+            }
+            .content-wrap{
+                display: flex;
+                flex-wrap: wrap; 
+                width: 102%;
+                margin: 0 auto;
+                padding: 30px 30px;
+                .content{
+                    border: 1px solid black;
+                    width: 23%;
+                    height: 240px;
+                    margin-right: 2%;
+                    margin-bottom: 2%;
+                    @include LG{
+                        width: 31%;
+                        height: 280px;
+                    }
+                    @include MD{
+                        width: 31%;
+                        height: 320px;
+                    }
+                    @include SM{
+                        width: 48%;
+                        height: 360px;
+                    }
+                    @include XS{
+                        width: 98%;
+                        height: 400px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.search-info{
+    position: fixed;
+    bottom: 1%;
+    right: 2%;
+    z-index: 2;
+    @include fx($v: $CT);
+    
+    i{
+        font-size: 2em;
+        margin-left: 0.125em;
+    }
+    .search-info-wrap{
+        border-radius: 0.5em;
+        input{
+            border-radius: 0.5em;
+            padding-left: 0.5em;
+        }
+    }
+}
+
+.popup-wrap{
+    @include center(150);
+    border: solid 1px black;
+    width: 80vw;
+    height: 80vh;
+    background-color: white;
+    display: none;
+    .write-popup{
+        display: none;
+        form{
+            padding: 0.5em;
+            input,select,textarea{
+                display: block;
+                margin: 0.5em 0;
+                width: calc(50% - 1em);
+                border: 1.5px solid black;
+            }
+            input:not(.calendar){
+                font-size: 1.5em;
+                width: 100%;
+            }
+            .date{
+                width: 100%;
+                @include fx;
+                fieldset{
+                    @include fx($h:$SB,$v:$CT);
+                    font-size: 1.5em;
+                    width: calc(50% - 0.5em);
+                    border: 1.5px solid black;
+                    input{
+                        width: 85%;
+                        margin: 0;
+                        display: inline-block;
+                        border: none;
+                    }
+                    i{
+                        text-align: center;
+                        width: 15%;
+                        margin: 0 auto;
+                    }
+                }
+                p{
+                    display: inline;
+                    font-size: 1em;
+                    margin: 0.5em 0;
+                }
+            }
+            .selectbox-wrap{
+                .selectbox{
+                    @include fx($h:$SB,$v:$CT);
+                    font-size: 1.5em;
+                    select{
+                        width: calc(50% - 0.5em);
+                    }
+                    p{
+                        display: inline-block;
+                        width: calc(50% - 0.5em);
+                        text-align: left;
+                    }
+                }
+            }
+            textarea{
+                width: 100%;
+                height: 300px;
+                resize: none;
+            }
+            .button-wrap{
+                @include fx($h:$CT);
+                .write-button{
+                    border: 1px solid black;
+                    font-size: 1.25em;
+                    margin: 0 0.25em;
+                    cursor: pointer;
                 }
             }
             
+            
         }
-        .menu-wrap{
-            @include MD{
-                display: none;
-            }
-            .write{
-                font-size: 2em;
-            }
+    }
+    .view-popup{
 
-        }
     }
-   
-}
 
-.center-wrapper{
-    @include fx;
-    position: relative;
-    height: 92vh;
-    .side-wrapper{
-        border: 1px solid black;
-        width: 180px;
-        overflow-y: scroll;
-        @include MD{
-            position: absolute;
-            left: -9999px;
-            z-index: 1;
-        }
-        .category{
-            padding: 0 10px;
-            .category-header{
-                padding-top: 10px;
-                @include fx($h: $SB);
-                font-weight: bold;
-            }
-            li{
-                padding: 3px 0;
-                p{
-                    display: inline;
-                }
-            }
-        }
-    }
-    .content-wrapper{
-        border: 1px solid black;
-        width: calc(100% - 180px);
-        overflow-y: scroll;
-        overflow-x: hidden;
-        @include MD{
-            width: 100vw;
-        }
-        .content-wrap{
-            display: flex;
-            flex-wrap: wrap; 
-            width: 102%;
-            margin: 0 auto;
-            padding: 30px 30px;
-            .content{
-                border: 1px solid black;
-                width: 23%;
-                height: 240px;
-                margin-right: 2%;
-                margin-bottom: 2%;
-                @include LG{
-                    width: 31%;
-                    height: 280px;
-                }
-                @include MD{
-                    width: 31%;
-                    height: 320px;
-                }
-                @include SM{
-                    width: 48%;
-                    height: 360px;
-                }
-                @include XS{
-                    width: 98%;
-                    height: 400px;
-                }
-            }
-        }
-    }
+
 }
