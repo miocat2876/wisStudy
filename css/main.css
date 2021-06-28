@@ -446,4 +446,5 @@ a:link, a:visited, a:hover, a:active {
 
 .popup-wrap .view-popup {
   height: 90vh;
+  display: none;
 }
