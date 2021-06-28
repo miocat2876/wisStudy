@@ -261,13 +261,11 @@ a:link, a:visited, a:hover, a:active {
   margin-left: 0.125em;
 }
 
-.search-info .search-info-wrap {
-  border-radius: 0.5em;
-}
-
 .search-info .search-info-wrap input {
   border-radius: 0.5em;
   padding-left: 0.5em;
+  border: none;
+  box-shadow: 1px 1px 1px 1px black;
 }
 
 .popup-wrap {
@@ -277,8 +275,8 @@ a:link, a:visited, a:hover, a:active {
   left: 50%;
   transform: translate(-50%, -50%);
   border: solid 1px black;
-  width: 80vw;
-  height: 80vh;
+  width: 95vw;
+  height: 95vh;
   background-color: white;
   display: none;
 }
