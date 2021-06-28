@@ -28,7 +28,10 @@
                 font-size: 2em;
                 @include fx($h: $SB,$v:$CT);
                 .panel{
-
+                    display: none;
+                    @include MD{
+                        display: block;
+                    }
                 }
                 .logo{
                     padding: 0 1em;
@@ -129,21 +132,56 @@
                     height: 240px;
                     margin-right: 2%;
                     margin-bottom: 2%;
+                    .info-wrap{
+                        .image-wrap{
+                            img{
+                                height: 140px;
+                            }
+                        }
+                    }
                     @include LG{
                         width: 31%;
                         height: 280px;
+                        .info-wrap{
+                            .image-wrap{
+                                img{
+                                    height: 170px;
+                                }
+                            }
+                        }
                     }
                     @include MD{
                         width: 31%;
                         height: 320px;
+                        .info-wrap{
+                            .image-wrap{
+                                .img{
+                                    height: 190px;
+                                }
+                            }
+                        }
                     }
                     @include SM{
                         width: 48%;
                         height: 360px;
+                        .info-wrap{
+                            .image-wrap{
+                                .img{
+                                    height: 220px;
+                                }
+                            }
+                        }
                     }
                     @include XS{
                         width: 98%;
                         height: 400px;
+                        .info-wrap{
+                            .image-wrap{
+                                .img{
+                                    height: 240px;
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -174,10 +212,12 @@
 .popup-wrap{
     @include center(150);
     border: solid 1px black;
-    margin-top: 20vw;
     width: 90vw;
     background-color: white;
     display: none;
+    @include XS{
+        margin-top: 20vh;
+    }
     .write-popup{
         display: none;
         form{
