@@ -1,1 +1,1 @@
-# wiselabStudy
+# wisStudy
