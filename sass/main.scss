@@ -237,8 +237,11 @@
     width: 90vw;
     background-color: white;
     display: none;
-    @include XS{
-        margin-top: 5vh;
+    @include HSM{
+        margin-top: 10vh;
+    }
+    @include HXS{
+        margin-top: 20vh;
     }
     .write-popup{
         display: none;

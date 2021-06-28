@@ -119,3 +119,19 @@
 	}
 	
 }
+
+@mixin HSM {
+	@media screen and(max-height:$SM) {
+		@content;
+		
+	}
+	
+}
+
+@mixin HXS {
+	@media screen and(max-height:$XS) {
+		@content;
+		
+	}
+	
+}
