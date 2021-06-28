@@ -27,7 +27,7 @@
                 <fieldset class="search-wrap">
                     <div class="input-wrap">
                         <input type="text" name="search" id="" class="search">
-                        <span type="button" class="search_button">
+                        <span class="search_button">
                             <i class="fas fa-search"></i>
                         </span>
                     </div>
@@ -94,6 +94,10 @@
                         </ul>
                     </li>
                 </ul>
+                <div class="serach-wrap">
+                    <input type="text">
+                    <i class="fas fa-search"></i>
+                </div>
             </div>
 
             <div class="content-wrapper">
@@ -193,13 +197,13 @@
         </div>
     </div>
 
-    <div class="search-info">
+    <!-- <div class="search-info">
         <div class="search-info-wrap">
             <input type="text">
         </div>
         <i class="fas fa-cloud">
         </i>
-    </div>
+    </div> -->
 
     <div class="popup-wrap">
         <div class="write-popup">
@@ -282,6 +286,12 @@
                     $(".side-wrapper").css("left","-9999px");
                 else
                     $(".side-wrapper").css("left","0");
+            });
+
+            $(".content").click(function(){
+                popupManagement({"display":"block"},function(){
+                    $(".view-popup").css("display","block");
+                })
             });
 
             $(".write").click(function(){

@@ -200,6 +200,14 @@ a:link, a:visited, a:hover, a:active {
   display: inline;
 }
 
+.wrap .center-wrapper .side-wrapper .serach-wrap {
+  padding: 0.5em;
+}
+
+.wrap .center-wrapper .side-wrapper .serach-wrap input {
+  width: 80%;
+}
+
 .wrap .center-wrapper .content-wrapper {
   border: 1px solid black;
   width: calc(100% - 180px);
@@ -231,17 +239,17 @@ a:link, a:visited, a:hover, a:active {
 }
 
 .wrap .center-wrapper .content-wrapper .content-wrap .content .info-wrap {
-  font-size: 1.125em;
+  font-size: 1em;
   text-align: center;
 }
 
 .wrap .center-wrapper .content-wrapper .content-wrap .content .info-wrap .image-wrap img {
-  height: 144px;
+  height: 120px;
 }
 
 .wrap .center-wrapper .content-wrapper .content-wrap .content .info-wrap .title {
   font-weight: bold;
-  margin: 10px 0;
+  margin: 0.625em 0;
 }
 
 .wrap .center-wrapper .content-wrapper .content-wrap .content .info-wrap .info div {
@@ -253,8 +261,11 @@ a:link, a:visited, a:hover, a:active {
     width: 31%;
     height: 280px;
   }
+  .wrap .center-wrapper .content-wrapper .content-wrap .content .info-wrap {
+    font-size: 1.125em;
+  }
   .wrap .center-wrapper .content-wrapper .content-wrap .content .info-wrap .image-wrap img {
-    height: 168px;
+    height: 140px;
   }
 }
 
@@ -263,8 +274,11 @@ a:link, a:visited, a:hover, a:active {
     width: 31%;
     height: 320px;
   }
+  .wrap .center-wrapper .content-wrapper .content-wrap .content .info-wrap {
+    font-size: 1.25em;
+  }
   .wrap .center-wrapper .content-wrapper .content-wrap .content .info-wrap .image-wrap img {
-    height: 192px;
+    height: 160px;
   }
 }
 
@@ -273,8 +287,11 @@ a:link, a:visited, a:hover, a:active {
     width: 48%;
     height: 360px;
   }
+  .wrap .center-wrapper .content-wrapper .content-wrap .content .info-wrap {
+    font-size: 1.375em;
+  }
   .wrap .center-wrapper .content-wrapper .content-wrap .content .info-wrap .image-wrap img {
-    height: 216px;
+    height: 180px;
   }
 }
 
@@ -283,8 +300,11 @@ a:link, a:visited, a:hover, a:active {
     width: 98%;
     height: 400px;
   }
+  .wrap .center-wrapper .content-wrapper .content-wrap .content .info-wrap {
+    font-size: 1.625em;
+  }
   .wrap .center-wrapper .content-wrapper .content-wrap .content .info-wrap .image-wrap img {
-    height: 240px;
+    height: 200px;
   }
 }
 
@@ -422,4 +442,8 @@ a:link, a:visited, a:hover, a:active {
   font-size: 1.25em;
   margin: 0 0.25em;
   cursor: pointer;
+}
+
+.popup-wrap .view-popup {
+  height: 90vh;
 }

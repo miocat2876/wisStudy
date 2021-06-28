@@ -110,6 +110,12 @@
                     }
                 }
             }
+            .serach-wrap{
+                padding: 0.5em;
+                input{
+                    width: 80%;
+                }
+            }
         }
         .content-wrapper{
             border: 1px solid black;
@@ -133,16 +139,16 @@
                     margin-right: 2%;
                     margin-bottom: 2%;
                     .info-wrap{
-                        font-size: 1.125em;
+                        font-size: 1em;
                         text-align: center;
                         .image-wrap{
                             img{
-                                height: 144px;
+                                height: 120px;
                             }
                         }
                         .title{
                             font-weight: bold;
-                            margin: 10px 0;
+                            margin: 0.625em 0;
                         }
                         .info{
                             div{
@@ -155,9 +161,10 @@
                         width: 31%;
                         height: 280px;
                         .info-wrap{
+                            font-size: 1.125em;
                             .image-wrap{
                                 img{
-                                    height: 168px;
+                                    height: 140px;
                                 }
                             }
                         }
@@ -166,9 +173,10 @@
                         width: 31%;
                         height: 320px;
                         .info-wrap{
+                            font-size: 1.25em;
                             .image-wrap{
                                 img{
-                                    height: 192px;
+                                    height: 160px;
                                 }
                             }
                         }
@@ -177,9 +185,10 @@
                         width: 48%;
                         height: 360px;
                         .info-wrap{
+                            font-size: 1.375em;
                             .image-wrap{
                                 img{
-                                    height: 216px;
+                                    height: 180px;
                                 }
                             }
                         }
@@ -188,9 +197,10 @@
                         width: 98%;
                         height: 400px;
                         .info-wrap{
+                            font-size: 1.625em;
                             .image-wrap{
                                 img{
-                                    height: 240px;
+                                    height: 200px;
                                 }
                             }
                         }
@@ -303,7 +313,7 @@
         }
     }
     .view-popup{
-
+        height: 90vh;
     }
 
 
