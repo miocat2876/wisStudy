@@ -237,11 +237,10 @@
     width: 90vw;
     background-color: white;
     display: none;
-    max-height: 90vh;
+    max-height: 80vh;
     overflow-y: scroll;
     .write-popup{
         display: none;
-
         form{
             padding: 0.5em;
             input,select,textarea{

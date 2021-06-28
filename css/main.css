@@ -341,7 +341,7 @@ a:link, a:visited, a:hover, a:active {
   width: 90vw;
   background-color: white;
   display: none;
-  max-height: 90vh;
+  max-height: 80vh;
   overflow-y: scroll;
 }
 
