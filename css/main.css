@@ -345,7 +345,7 @@ a:link, a:visited, a:hover, a:active {
 
 @media screen and (max-width: 576px) {
   .popup-wrap {
-    margin-top: 20vh;
+    margin-top: 10vh;
   }
 }
 
