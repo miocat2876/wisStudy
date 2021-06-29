@@ -1,0 +1,87 @@
+@import 'base';
+
+//@include
+//&
+
+.wrapper{
+  height: 100vh;
+  border: 1px solid black;
+  @include fx($w:$NW);
+  .side-wrap{
+    border: 1px solid black;
+    min-width: 250px;
+    background-color: #32B8FF;
+    overflow-y: auto;
+    padding: 1em 0;
+    color: white;
+    .side-list{
+      li{
+        @include fx($h:$SB,$v:$CT);
+        .menu-i{
+          font-size: 1.125em;
+          padding: 30px;
+          @include fx();
+          i{
+            padding-right: 1.5em;
+          }
+        }
+        &:hover{
+          background-color: white	;
+          color: #32B8FF;
+        }
+        
+      }
+    }
+  }
+  .content-wrap{
+    width: calc(#{$XL} - 250px);
+    @include XL{
+      width: calc(#{$LG} - 250px);
+    }
+    @include LG{
+      width: calc(#{$MD} - 250px);
+    }
+    @include MD{
+      width: calc(#{$SM} - 250px);
+    }
+    @include SM{
+      width: calc(#{$XS} - 250px);
+    }
+    margin: 0 auto;
+    padding: 2em 0;
+    .container{
+      .title{
+        margin-bottom: 1em;
+       p{
+          font-size: 2em;
+          display: inline-block;
+          padding-bottom: 0.25em;
+          border-bottom: 1px solid gainsboro;
+        &::after{
+          
+        }
+       } 
+      }
+      .content-boxes{
+        @include fx($w:$NW);
+        flex-flow: column;
+        .content-box{
+          border: 1px solid black;
+          .content{
+            height: 10vh;
+            .title{
+             @include ellipsis;
+            }
+            .info{
+              @include multiEllipsis();
+            }
+          }
+          .board{
+            border: 1px solid black;
+              
+          }
+        }
+      }
+    }
+  }
+}
