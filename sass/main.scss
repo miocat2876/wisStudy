@@ -135,11 +135,11 @@
                 .content{
                     border: 1px solid black;
                     width: 23%;
-                    height: 260px;
+                    height: 300px;
                     margin-right: 2%;
                     margin-bottom: 2%;
                     .info-wrap{
-                        font-size: 1em;
+                        font-size: 1.125em;
                         .image-wrap{
                             img{
                                 height: 120px;
@@ -167,46 +167,46 @@
                         width: 31%;
                         height: 300px;
                         .info-wrap{
-                            font-size: 1.125em;
+                            //font-size: 1.25em;
                             .image-wrap{
                                 img{
-                                    height: 140px;
+                                    //height: 120px;
                                 }
                             }
                         }
                     }
                     @include MD{
                         width: 31%;
-                        height: 340px;
+                        height: 300px;
                         .info-wrap{
-                            font-size: 1.25em;
+                            //font-size: 1.25em;
                             .image-wrap{
                                 img{
-                                    height: 160px;
+                                    //height: 120px;
                                 }
                             }
                         }
                     }
                     @include SM{
                         width: 48%;
-                        height: 380px;
+                        height: 300px;
                         .info-wrap{
-                            font-size: 1.375em;
+                            //font-size: 1.25em;
                             .image-wrap{
                                 img{
-                                    height: 180px;
+                                    //height: 120px;
                                 }
                             }
                         }
                     }
                     @include XS{
                         width: 98%;
-                        height: 420px;
+                        height: 300px;
                         .info-wrap{
-                            font-size: 1.5em;
+                            //font-size: 1.25em;
                             .image-wrap{
                                 img{
-                                    height: 200px;
+                                    //height: 120px;
                                 }
                             }
                         }
