@@ -178,3 +178,7 @@ a:link, a:visited, a:hover, a:active {
 .wrapper .content-wrap .container .content-boxes .content-box .board {
   border: 1px solid black;
 }
+
+.wrapper .content-wrap .container .content-boxes .content-box .board p {
+  border-bottom: 1px solid black;
+}
