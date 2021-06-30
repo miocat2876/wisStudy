@@ -4,7 +4,7 @@
 //&
 
 .wrapper{
-  height: 100vh;
+  min-height: 100vh;
   border: 1px solid black;
   @include fx($w:$NW);
   .side-wrap{
@@ -29,7 +29,6 @@
           background-color: white	;
           color: #32B8FF;
         }
-        
       }
     }
   }
@@ -65,18 +64,29 @@
       .content-boxes{
         @include fx($w:$NW);
         flex-flow: column;
+        overflow-y: auto;
         .content-box{
+          margin: 0.25em 0;
           border: 1px solid black;
+          padding: 10px;
           .content{
-            height: 10vh;
+            // height: 10vh;
             .title{
              @include ellipsis;
             }
             .info{
-              @include multiEllipsis();
+              @include multiEllipsis($line:2);
+            }
+            .i-wrap{
+              text-align: right;
+              font-size: 1.5em;
+              cursor: pointer;
             }
           }
           .board{
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
             border: 1px solid black;
             p{
               border-bottom: 1px solid black;

@@ -33,21 +33,37 @@
           <div class="content-box">
             <div class="content">
               <div class="title">
+                <p>제목</p>
               </div>
               <div class="info">
-                
+                <p>내용</p>
+              </div>
+              <div class="i-wrap">
+                <i class="fas fa-arrow-down"></i>
+              </div>
+            </div>
+            <div class="board">
+              <div class="title">
+                제목
+              </div>
+              <div class="category">
+
+              </div>
+              <div class="content">
+
               </div>
             </div>
           </div>
           <div class="content-box">
             <div class="content">
               <div class="title">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi suscipit, nam quos cupiditate sunt repellat? Incidunt, eos corrupti! Quasi reprehenderit error quod non soluta obcaecati assumenda earum placeat illum fugit!
+                <p>제목</p>
               </div>
               <div class="info">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi suscipit, nam quos cupiditate sunt repellat? Incidunt, eos corrupti! Quasi reprehenderit error quod non soluta obcaecati assumenda earum placeat illum fugit!
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi suscipit, nam quos cupiditate sunt repellat? Incidunt, eos corrupti! Quasi reprehenderit error quod non soluta obcaecati assumenda earum placeat illum fugit!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. In culpa omnis asperiores sunt officia blanditiis amet autem quibusdam! Officiis magni quidem ab distinctio quos eos possimus fuga ipsum totam doloribus.
+                <p>내용</p>
+              </div>
+              <div class="i-wrap">
+                <i class="fas fa-arrow-down"></i>
               </div>
             </div>
             <div class="board">
@@ -66,6 +82,20 @@
       </div>
     </div>
   </div>
+
+
+  <script>
+  $(document).ready(function() {
+      $(".i-wrap").click(function(){
+        let board = $(this).parent().next();
+          if($(board).css("display") === 'none')
+              $(board).css("display","block");
+          else
+              $(board).css("display","none");
+      });
+  });
+
+  </script>
    
   
 </body>
