@@ -13,8 +13,9 @@
       min-height: 100vh;
       min-width: 350px;
       max-width: 350px;
+      //overflow-x: hidden;
       &::-webkit-scrollbar { 
-        //width: 0; /*스크롤바의 너비*/ 
+        width: 0; /*스크롤바의 너비*/ 
       }
       @include MD{
         left : -9999px;
@@ -46,7 +47,7 @@
       left: 350px;
       top: 0;
       min-height: 100vh;
-      width: calc(100vw - 370px);
+      width: calc(100vw - 350px);
       @include MD{
         left: 0;
         width: calc(100vw);
