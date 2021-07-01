@@ -1,10 +1,11 @@
 @import 'variables';
 
-@mixin fx($h: $FS, $v: $ST, $w: wrap) {
+@mixin fx($h: $FS, $v: $ST, $w: wrap,$direction:row) {
 	display: flex;
 	justify-content: $h;
 	align-items: $v;
 	flex-wrap: $w;
+	flex-direction: $direction;
 }
 
 @mixin fx-wrap($w:wrap) {
@@ -88,6 +89,10 @@
 	overflow:hidden;
 	text-overflow:ellipsis;
 	
+}
+
+@mixin border($px:1px,$color:black) {
+	border: $px solid $color;
 }
 
 @mixin multiEllipsis($w:100%,$line:3,$lh:1.2em) {

@@ -1,0 +1,123 @@
+@import 'base';
+
+
+.wrapper{
+  .container-wrap{
+    @include fx($w:nowrap);
+    .side-wrap{
+      @include border;
+      position: fixed;
+      left: 0;
+      top: 0;
+      overflow-y: scroll;
+      min-height: 100vh;
+      min-width: 350px;
+      max-width: 350px;
+      &::-webkit-scrollbar { 
+        //width: 0; /*스크롤바의 너비*/ 
+      }
+      @include MD{
+        left : -9999px;
+      }
+      .box{
+        @include fx($direction:column);
+        @include border;
+        cursor: pointer;
+        div{
+          margin: 8px;
+        }
+        .title{
+          margin-top: 16px;
+          font-weight: bold;
+          font-size: 1.25em;
+        }
+        .content{
+            @include multiEllipsis($line:3);
+        }
+        &:hover{
+          background-color: white;
+          color: #3CAEFF; 
+        }
+      }
+    }
+    .content-wrapper{
+      @include border;
+      position: relative;
+      left: 350px;
+      top: 0;
+      min-height: 100vh;
+      width: calc(100vw - 370px);
+      @include MD{
+        left: 0;
+        width: calc(100vw);
+      }
+      .content-wrap{
+        margin: 2em auto;
+        @include border;
+        height: calc(100% - 4em);
+        width: calc(100% - 4em);
+        .content{
+          padding: 2em;
+          .title-wrap{
+            font-size: 2em;
+            font-weight: bold;
+            border-bottom: 1px solid black;
+            padding-bottom: 2px;
+            display: inline;
+            .category{
+              
+            }
+            .title-info-wrap{
+               @include fx($h:$SB);
+               margin-top: 20px;
+               .profile{
+                @include fx();
+                .photo{
+                  width: 50px;
+                }
+                .write-info{
+                  @include fx($h:$CT,$direction:$col);
+                  font-size: 0.5em;
+                  margin-left: 16px;
+                  .content{
+                    background-color: cadetblue;
+                    height: 50%;
+                    width: 50%;
+                  }
+                  .date{
+                    margin-top: 4px;
+                    font-weight: normal;
+  
+                  }
+                }
+              }
+            }
+          }
+        }
+        .mainText{
+          margin: 16px 0;
+        }
+      }
+    }
+  }
+}
+
+.menu-wrap{
+  position: fixed;
+  bottom: 2%;
+  left: 1%;
+  ul{
+    @include fx($v:$CT);
+    font-size: 2em;
+    li{
+      padding-right: 8px;
+      input[type="text"]{
+        width: 200px;
+        border-radius: 5px;
+      }
+      &:last-child{
+        margin-left: 20px;
+      }
+    }
+  }
+}
