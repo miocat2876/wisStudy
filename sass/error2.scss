@@ -134,7 +134,7 @@ body{font-family: $open-en;}
     @include fx($v:$CT);
     font-size: 1.375em;
     @include XS{
-      font-size: 1.125em;
+      font-size: 1em;
     }
     li{
       padding-right: 0.75em;
