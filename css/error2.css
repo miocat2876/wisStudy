@@ -256,6 +256,7 @@ body {
 
 .menu-wrap ul li {
   padding-right: 0.75em;
+  cursor: pointer;
 }
 
 .menu-wrap ul li input[type="text"] {
