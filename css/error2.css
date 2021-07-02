@@ -101,6 +101,13 @@ body {
   }
 }
 
+@media screen and (max-width: 576px) {
+  .wrapper .container-wrap .side-wrap {
+    min-width: 100vw;
+    max-width: 100vw;
+  }
+}
+
 .wrapper .container-wrap .side-wrap .box {
   display: flex;
   justify-content: flex-start;
@@ -156,6 +163,13 @@ body {
   border: 1px solid black;
   min-height: calc(100% - 4em);
   width: calc(100% - 4em);
+}
+
+@media screen and (max-width: 576px) {
+  .wrapper .container-wrap .content-wrapper .content-wrap {
+    width: calc(100%);
+    margin: 0;
+  }
 }
 
 .wrapper .container-wrap .content-wrapper .content-wrap .content {
