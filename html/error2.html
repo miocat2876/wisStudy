@@ -168,7 +168,6 @@
           media.addListener((a) => {
             if(mediaCheck.sideWrapSw){
               $(".side-wrap").css("left","");
-              console.log('되나',$(".side-wrap").css("left"));
             }
           })
           $(".side-sw").click(function(){
@@ -194,10 +193,10 @@
           });
           
       });
-      function popupManagement(state,call){
-          $(".popup-on").css(state);
-          $(".popup-wrap").css(state);
-          call();
+      function popupManagement(value,callback){
+          $(".popup-on").css(value);
+          $(".popup-wrap").css(value);
+          callback();
       }
 
       $('#summernote').summernote({
