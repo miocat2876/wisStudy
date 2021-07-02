@@ -139,6 +139,7 @@ body{font-family: $open-en;}
     @include fx($v:$CT);
     font-size: 1.375em;
     @include XS{
+      width: 300px;
       @include fx($v:$FS,$direction:$col);
     }
     

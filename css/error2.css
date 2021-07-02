@@ -258,6 +258,7 @@ body {
 
 @media screen and (max-width: 576px) {
   .menu-wrap ul {
+    width: 300px;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
