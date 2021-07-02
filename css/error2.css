@@ -290,6 +290,13 @@ body {
   overflow-y: auto;
 }
 
+@media screen and (max-width: 576px) {
+  .popup-wrap {
+    width: 100vw;
+    max-height: 80vh;
+  }
+}
+
 .popup-wrap .write-popup {
   display: none;
 }

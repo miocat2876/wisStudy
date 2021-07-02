@@ -168,6 +168,10 @@ body{font-family: $open-en;}
   display: none;
   max-height: 90vh;
   overflow-y: auto;
+  @include XS{
+    width: 100vw;
+    max-height: 80vh;
+  }
   .write-popup{
       display: none;
       form{
