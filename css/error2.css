@@ -1,6 +1,7 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Open+Sans&display=swap");
 /**************** 반응형 ****************/
 html, body, h1, h2, h3, h4, h5, h6, p, div, header, footer, section, aside, article, ul, ol, li, dl, dd, dt, fieldset {
   margin: 0;
@@ -54,6 +55,23 @@ a:link, a:visited, a:hover, a:active {
   clear: both;
 }
 
+html {
+  font-family: "Open Sans", sans-serif;
+}
+
+.wrapper .popup-on {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: .5;
+  filter: alpha(opacity=50);
+  z-index: 100;
+  display: none;
+}
+
 .wrapper .container-wrap {
   display: flex;
   justify-content: flex-start;
@@ -64,9 +82,8 @@ a:link, a:visited, a:hover, a:active {
 
 .wrapper .container-wrap .side-wrap {
   border: 1px solid black;
-  position: fixed;
-  left: 0;
-  top: 0;
+  background-color: white;
+  z-index: 1;
   overflow-y: scroll;
   min-height: 100vh;
   min-width: 350px;
@@ -76,6 +93,12 @@ a:link, a:visited, a:hover, a:active {
 .wrapper .container-wrap .side-wrap::-webkit-scrollbar {
   width: 0;
   /*스크롤바의 너비*/
+}
+
+@media screen and (max-width: 1200px) {
+  .wrapper .container-wrap .side-wrap {
+    left: 0;
+  }
 }
 
 @media screen and (max-width: 992px) {
@@ -91,6 +114,8 @@ a:link, a:visited, a:hover, a:active {
   flex-wrap: wrap;
   flex-direction: column;
   border: 1px solid black;
+  border-left: 0;
+  border-right: 0;
   cursor: pointer;
 }
 
@@ -109,24 +134,20 @@ a:link, a:visited, a:hover, a:active {
   -webkit-line-clamp: 3;
   /* 라인수 */
   width: 100%;
-  line-height: 1.2em;
-  height: calc(1.2em * 3);
+  line-height: 1.5em;
+  height: calc(1.5em * 3);
   overflow: hidden;
   text-overflow: ellipsis;
   text-align: left;
   word-wrap: break-word;
 }
 
-.wrapper .container-wrap .side-wrap .box:hover {
-  background-color: white;
-  color: #3CAEFF;
+.wrapper .container-wrap .side-wrap .box:hover > .content {
+  text-decoration: underline;
 }
 
 .wrapper .container-wrap .content-wrapper {
   border: 1px solid black;
-  position: relative;
-  left: 350px;
-  top: 0;
   min-height: 100vh;
   width: calc(100vw - 350px);
 }
@@ -201,12 +222,15 @@ a:link, a:visited, a:hover, a:active {
 
 .wrapper .container-wrap .content-wrapper .content-wrap .mainText {
   margin: 16px 0;
+  font-size: 18px;
+  line-height: 1.5em;
 }
 
 .menu-wrap {
   position: fixed;
-  bottom: 2%;
-  left: 1%;
+  bottom: 8px;
+  left: 8px;
+  z-index: 999;
 }
 
 .menu-wrap ul {
@@ -215,18 +239,90 @@ a:link, a:visited, a:hover, a:active {
   align-items: center;
   flex-wrap: wrap;
   flex-direction: row;
-  font-size: 2em;
+  font-size: 1.375em;
 }
 
 .menu-wrap ul li {
-  padding-right: 8px;
+  padding-right: 0.75em;
 }
 
 .menu-wrap ul li input[type="text"] {
   width: 200px;
   border-radius: 5px;
+  opacity: 0.3;
+  transition: all 0.3s;
 }
 
-.menu-wrap ul li:last-child {
-  margin-left: 20px;
+.menu-wrap ul li input[type="text"]:focus {
+  opacity: 1;
+  font-weight: bold;
+  width: 250px;
+}
+
+.menu-wrap ul .side-sw {
+  display: none;
+}
+
+@media screen and (max-width: 992px) {
+  .menu-wrap ul .side-sw {
+    display: block;
+  }
+}
+
+.popup-wrap {
+  z-index: 150;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: fixed;
+  border: solid 1px black;
+  width: 70vw;
+  background-color: white;
+  display: none;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.popup-wrap .write-popup {
+  display: none;
+}
+
+.popup-wrap .write-popup form {
+  padding: 0.5em;
+}
+
+.popup-wrap .write-popup form input, .popup-wrap .write-popup form select, .popup-wrap .write-popup form textarea {
+  display: block;
+  margin: 0.5em 0;
+  width: calc(50% - 1em);
+  border: 1.5px solid black;
+}
+
+.popup-wrap .write-popup form input:not(.calendar) {
+  font-size: 1.5em;
+  width: 100%;
+}
+
+.popup-wrap .write-popup form .title::placeholder {
+  padding-left: 4px;
+}
+
+.popup-wrap .write-popup form .content {
+  margin-bottom: 8px;
+}
+
+.popup-wrap .button-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.popup-wrap .button-wrap .popup_button {
+  border: 1px solid black;
+  font-size: 1.25em;
+  margin: 0 0.25em;
+  cursor: pointer;
 }

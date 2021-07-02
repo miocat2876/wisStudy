@@ -1,14 +1,26 @@
 @import 'base';
 
+html{font-family: $open-en;}
 
 .wrapper{
+  .popup-on{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: .5;
+    filter: alpha(opacity=50);
+    z-index: 100;
+    display: none;
+}   
   .container-wrap{
     @include fx($w:nowrap);
     .side-wrap{
       @include border;
-      position: fixed;
-      left: 0;
-      top: 0;
+      background-color: white;
+      z-index: 1;
       overflow-y: scroll;
       min-height: 100vh;
       min-width: 350px;
@@ -17,12 +29,17 @@
       &::-webkit-scrollbar { 
         width: 0; /*스크롤바의 너비*/ 
       }
+      @include LG{
+        left : 0;
+      }
       @include MD{
         left : -9999px;
       }
       .box{
         @include fx($direction:column);
         @include border;
+        border-left: 0;
+        border-right: 0;
         cursor: pointer;
         div{
           margin: 8px;
@@ -33,19 +50,16 @@
           font-size: 1.25em;
         }
         .content{
-            @include multiEllipsis($line:3);
+            @include multiEllipsis($line:3,$lh:1.5em);
         }
-        &:hover{
-          background-color: white;
-          color: #3CAEFF; 
+        &:hover >.content{
+          text-decoration :underline;
         }
+
       }
     }
     .content-wrapper{
       @include border;
-      position: relative;
-      left: 350px;
-      top: 0;
       min-height: 100vh;
       width: calc(100vw - 350px);
       @include MD{
@@ -97,6 +111,8 @@
         }
         .mainText{
           margin: 16px 0;
+          font-size: 18px;
+          line-height: 1.5em;
         }
       }
     }
@@ -105,20 +121,78 @@
 
 .menu-wrap{
   position: fixed;
-  bottom: 2%;
-  left: 1%;
+  bottom: 8px;
+  left: 8px;
+  z-index: 999;
   ul{
     @include fx($v:$CT);
-    font-size: 2em;
+    font-size: 1.375em;
     li{
-      padding-right: 8px;
+      padding-right: 0.75em;
       input[type="text"]{
         width: 200px;
         border-radius: 5px;
+        opacity: 0.3;
+        transition: all 0.3s;
+        &:focus{
+          opacity: 1;
+          font-weight: bold;
+          width: 250px;
+        }
       }
       &:last-child{
-        margin-left: 20px;
+        // margin-left: 0.625em;
+      }
+    }
+    .side-sw{
+      display: none;
+      @include MD{
+        display: block;
       }
     }
   }
+}
+
+.popup-wrap{
+  @include center(150);
+  position: fixed;
+  border: solid 1px black;
+  width: 70vw;
+  background-color: white;
+  display: none;
+  max-height: 90vh;
+  overflow-y: auto;
+  .write-popup{
+      display: none;
+      form{
+          padding: 0.5em;
+          input,select,textarea{
+              display: block;
+              margin: 0.5em 0;
+              width: calc(50% - 1em);
+              border: 1.5px solid black;
+          }
+          input:not(.calendar){
+              font-size: 1.5em;
+              width: 100%;
+          }
+          .title{
+            &::placeholder{
+              padding-left: 4px;
+            }
+          }
+          .content{
+              margin-bottom: 8px;
+          }
+      }
+  }
+  .button-wrap{
+      @include fx($h:$CT);
+      .popup_button{
+          border: 1px solid black;
+          font-size: 1.25em;
+          margin: 0 0.25em;
+          cursor: pointer;
+      }
+  }  
 }
