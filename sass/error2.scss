@@ -139,7 +139,6 @@ body{font-family: $open-en;}
     @include fx($v:$CT);
     font-size: 1.375em;
     @include XS{
-      width: 300px;
       @include fx($v:$FS,$direction:$col);
     }
     
@@ -150,6 +149,25 @@ body{font-family: $open-en;}
         margin: 8px 0;
       }
       .search{
+        @include fx($v:$CT);
+        @include XS{
+          &:hover input[type="text"]{
+            width: 200px;
+            visibility: visible;
+          }
+        }
+        i.mobile{
+          display: none;
+          @include XS{
+            display: block;
+          }
+        }
+        i.desktop{
+          display: block;
+          @include XS{
+            display: none;
+          }
+        }
         input[type="text"]{
           width: 200px;
           border-radius: 5px;
@@ -164,13 +182,6 @@ body{font-family: $open-en;}
             opacity: 1;
             font-weight: bold;
             width: 250px;
-          }
-        }
-        @include fx($v:$CT);
-        @include XS{
-          &:hover input[type="text"]{
-            width: 200px;
-            visibility: visible;
           }
         }
       }
