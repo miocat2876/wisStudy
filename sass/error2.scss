@@ -133,6 +133,9 @@ body{font-family: $open-en;}
   ul{
     @include fx($v:$CT);
     font-size: 1.375em;
+    @include XS{
+      font-size: 1.125em;
+    }
     li{
       padding-right: 0.75em;
       input[type="text"]{
@@ -161,6 +164,11 @@ body{font-family: $open-en;}
 
 .popup-wrap{
   @include center(150);
+  @include XS{
+    top: 0;
+    left: 0;
+    transform: translate(0,0);
+  }
   position: fixed;
   border: solid 1px black;
   width: 70vw;

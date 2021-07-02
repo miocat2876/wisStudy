@@ -248,6 +248,12 @@ body {
   font-size: 1.375em;
 }
 
+@media screen and (max-width: 576px) {
+  .menu-wrap ul {
+    font-size: 1.125em;
+  }
+}
+
 .menu-wrap ul li {
   padding-right: 0.75em;
 }
@@ -288,6 +294,14 @@ body {
   display: none;
   max-height: 90vh;
   overflow-y: auto;
+}
+
+@media screen and (max-width: 576px) {
+  .popup-wrap {
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+  }
 }
 
 @media screen and (max-width: 576px) {

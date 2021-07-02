@@ -24,6 +24,7 @@
 	transform: translate(-50%,-50%);
 }
 
+
 @mixin wrapper($w: $LG) {
 	max-width: $w;
 	margin: 0 auto;
