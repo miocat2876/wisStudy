@@ -242,6 +242,7 @@ body {
 
 @media screen and (max-width: 576px) {
   .menu-wrap {
+    display: inline-table;
     right: 16px;
     bottom: 48px;
   }
@@ -263,6 +264,7 @@ body {
     align-items: flex-start;
     flex-wrap: wrap;
     flex-direction: column;
+    display: inline-flex;
   }
 }
 

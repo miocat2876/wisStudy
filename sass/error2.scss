@@ -132,6 +132,7 @@ body{font-family: $open-en;}
   left: 8px;
   z-index: 99;
   @include XS{
+    display: inline-table;
     right: 16px;
     bottom: 48px;
   }
@@ -140,6 +141,7 @@ body{font-family: $open-en;}
     font-size: 1.375em;
     @include XS{
       @include fx($v:$FS,$direction:$col);
+      display: inline-flex;
     }
     
     li{
