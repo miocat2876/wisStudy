@@ -236,7 +236,7 @@ body {
   position: fixed;
   bottom: 8px;
   left: 8px;
-  z-index: 999;
+  z-index: 99;
 }
 
 .menu-wrap ul {

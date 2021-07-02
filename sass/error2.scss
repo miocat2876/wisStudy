@@ -129,7 +129,7 @@ body{font-family: $open-en;}
   position: fixed;
   bottom: 8px;
   left: 8px;
-  z-index: 999;
+  z-index: 99;
   ul{
     @include fx($v:$CT);
     font-size: 1.375em;
