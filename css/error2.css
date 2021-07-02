@@ -335,6 +335,12 @@ body {
   width: 250px;
 }
 
+@media screen and (max-width: 576px) {
+  .menu-wrap ul li .search input[type="text"]:focus {
+    width: 200px;
+  }
+}
+
 .menu-wrap ul .side-sw {
   display: none;
 }
