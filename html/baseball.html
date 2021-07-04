@@ -36,7 +36,7 @@
             if (is_start === 1) {
                 if ((!isNaN(Number(msg)) || msg.indexOf('a') || msg.indexOf('b')) && msg.length == 4) {
                     if(msgCompare(msg)){
-                        replier.reply("리얼 빢빡맨");
+                        replier.reply("중복된 숫자입니다.");
                         return;
                     }else{
                         msgRecord.push(msg);
