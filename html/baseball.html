@@ -29,14 +29,14 @@
 
                 replier.reply(answer);
 
-                replier.reply("숫자야구게임을 시작합니다. \n4자리 숫자를 입력해주세요. \n포기는 (/나는빡빡이다)를 \n입력해주세요.");
+                replier.reply("숫자야구게임을 시작합니다. \n4자리 0~b범위까지 문자를 입력해주세요. \n포기는 (/나는빡빡이다)를 \n입력해주세요.");
                 is_start = 1;
                 count = 15;
             }
             if (is_start === 1) {
-                if (!isNaN(Number(msg)) && msg.length == 4) {
+                if ((!isNaN(Number(msg)) || msg.indexOf('a') || msg.indexOf('b')) && msg.length == 4) {
                     if(msgCompare(msg)){
-                        replier.reply("중복데이터");
+                        replier.reply("리얼 빢빡맨");
                         return;
                     }else{
                         msgRecord.push(msg);
@@ -46,6 +46,7 @@
                     count -= 1;
                     if (result[0] == 4) {
                         replier.reply(sender + "님, 정답입니다!\n게임을 종료합니다.");
+                        msgRecord = [];
                         rank[sender] =+ 1;
                         replier.reply(JSON.stringify(rank));
                         is_start = 0;
@@ -60,11 +61,13 @@
                     replier.reply("기회를 모두 사용했습니다\n패배! \n정답 : " + String(answer[0]) + String(answer[1]) + String(answer[2]) + String(answer[3]));
                     is_start = 0;
                     count = 10;
+                    msgRecord = [];
                 }
                 if (msg == "/나는빡빡이다") {
                     replier.reply("정답 : " + String(answer[0]) + String(answer[1]) + String(answer[2]) + String(answer[3]));
                     is_start = 0;
                     count = 10;
+                    msgRecord = [];
                 }
             }
         }
