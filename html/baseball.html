@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    
+    <input type="text" id="sender" value="테스트">
+    <input type="text" id="msg" onkeyup='enterkey();'>
+
+    <div id="chatview">
+
+    </div>
+
+    <script>
+        const scriptName = "야구게임";
+        let rank = {};
+        let answer = [];
+        let msgRecord = [];
+        let is_start = 0;
+        let count = 0;
+        function response(msg, sender, replier) {
+            if (msg.startsWith("/야구") && is_start === 0) {
+                answer = setNumber();
+
+                replier.reply(answer);
+
+                replier.reply("숫자야구게임을 시작합니다. \n4자리 숫자를 입력해주세요. \n포기는 (/나는빡빡이다)를 \n입력해주세요.");
+                is_start = 1;
+                count = 15;
+            }
+            if (is_start === 1) {
+                if (!isNaN(Number(msg)) && msg.length == 4) {
+                    if(msgCompare(msg)){
+                        replier.reply("중복데이터");
+                        return;
+                    }else{
+                        msgRecord.push(msg);
+                    }
+
+                    let result = compare(msg);
+                    count -= 1;
+                    if (result[0] == 4) {
+                        replier.reply(sender + "님, 정답입니다!\n게임을 종료합니다.");
+                        rank[sender] =+ 1;
+                        replier.reply(JSON.stringify(rank));
+                        is_start = 0;
+                        count = 10;
+                    } else if (result[0] == 0 && result[1] == 0) {
+                        replier.reply("아웃!\n\n남은기회 " + count + "번");
+                    } else {
+                        replier.reply(result[0] + " 스트라이크\n" + result[1] + " 볼\n\n남은기회 " + count + "번");
+                    }
+                }
+                if (count == 0) {
+                    replier.reply("기회를 모두 사용했습니다\n패배! \n정답 : " + String(answer[0]) + String(answer[1]) + String(answer[2]) + String(answer[3]));
+                    is_start = 0;
+                    count = 10;
+                }
+                if (msg == "/나는빡빡이다") {
+                    replier.reply("정답 : " + String(answer[0]) + String(answer[1]) + String(answer[2]) + String(answer[3]));
+                    is_start = 0;
+                    count = 10;
+                }
+            }
+        }
+        function setNumber() {
+            let answer = [];
+            let check = true;
+            while (answer.length < 4) {
+                let randomNumber = Math.floor(Math.random() * 12);
+                
+                if(randomNumber ==10){
+                    randomNumber = 'a'
+                }else if(randomNumber == 11){
+                    randomNumber = 'b'
+                }
+                for (let data of answer) {
+                    if (data == randomNumber) {
+                        check = false;
+                        break;
+                    }
+                }
+                if (check) {
+                    answer.push(randomNumber);
+                }
+                check = true;
+            }
+            return answer;
+        }
+        function compare(msg) {
+            let SB = [0, 0];
+            for (let i = 0; i < 4; i++) {
+                for (let j = 0; j < 4; j++) {
+                    if (answer[i] == msg[j]) {
+                        if (i == j) {
+                            SB[0] += 1;
+                        } else {
+                            SB[1] += 1;
+                        }
+                    }
+                }
+            }
+            return SB;
+        }
+
+        function msgCompare(msg){
+            let result = false;
+            for (let i = 0; i < msgRecord.length; i++) {
+                if(msgRecord[i] === msg){
+                    result = true;
+                }
+            }
+            return result;
+        }
+
+        //response(msg, sender, replier);
+
+
+        function replier2(msg){
+            let chatview = document.getElementById("chatview");
+            let sender = document.getElementById("sender");
+                chatview.innerHTML += "<div>"+sender.value+'::' + msg+"</div>";
+        }
+
+        window.onload = function(){
+        }
+
+        function enterkey() {
+            if (window.event.keyCode == 13) { 
+                
+                let msg = document.getElementById("msg");
+                let sender = document.getElementById("sender");
+                response(msg.value, sender.value, {reply:replier2});
+                msg.value = "";
+            }
+        }
+
+    </script>
+    
+</body>
+</html>
