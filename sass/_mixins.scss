@@ -30,8 +30,8 @@
 	margin: 0 auto;
 }
 
-@mixin shadow($x:0,$y:0,$b:5px,$o:0.5) {
-	box-shadow: 5px 5px 10px rgba(0,0,0,$o);
+@mixin shadow($x:5px,$y:5px,$b:5px,$o:0.5) {
+	box-shadow: $x $y $b rgba(0,0,0,$o);
 }
 @mixin shadow-light($x:0,$y:0,$b:5px,$o:0.5) {
 	box-shadow: 5px 5px 10px rgba(255,255,255,$o);
@@ -108,6 +108,14 @@
 	text-overflow:ellipsis;
 	text-align:left;
 	word-wrap: break-word; 
+}
+
+@mixin scrollNone() {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+&::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+}
 }
 
 
