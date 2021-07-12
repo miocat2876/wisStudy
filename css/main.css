@@ -365,7 +365,6 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border: 2px solid black;
   width: 90vw;
   background-color: white;
   display: none;
@@ -482,10 +481,12 @@ body {
   padding: 0.5em;
   color: #4C4C6D;
   border: 1px solid #777;
+  border-bottom: 0;
 }
 
 .popup-wrap .view-popup .content {
   padding: 0.5em;
+  border: 1px solid #777;
 }
 
 .popup-wrap .view-popup .content table {
