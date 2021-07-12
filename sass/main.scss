@@ -290,7 +290,6 @@ body{
 
 .popup-wrap{
     @include center(150);
-    @include border($px:2px);
     width: 90vw;
     background-color: white;
     display: none;
@@ -367,10 +366,12 @@ body{
             @include fx($h:$SB,$v:$CT);
             padding: 0.5em;
             color: $fontColor;
-            @include border($color:#777);
+            @include border($px:1px,$color:#777);
+            border-bottom: 0;
         }
         .content{
             padding: 0.5em;
+            @include border($px:1px,$color:#777);
             table{
                 width: 100%;
                 text-align: center;
