@@ -56,9 +56,10 @@ a:link, a:visited, a:hover, a:active {
   clear: both;
 }
 
-.wrap {
+body {
   color: #4C4C6D;
-  font-weight: bold;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 300;
 }
 
 .wrap .popup-on {
@@ -182,7 +183,7 @@ a:link, a:visited, a:hover, a:active {
   border: 2px solid black;
   width: 180px;
   height: 100%;
-  background-color: #B8DFD8;
+  background-color: white;
 }
 
 @media screen and (max-width: 992px) {
@@ -254,7 +255,6 @@ a:link, a:visited, a:hover, a:active {
   width: 102%;
   margin: 0 auto;
   padding: 30px 30px;
-  margin-bottom: 8vh;
 }
 
 .wrap .center-wrapper .content-wrapper .content-wrap .content {
