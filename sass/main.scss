@@ -5,13 +5,15 @@ $postColor:#FFE194;
 $headerColor:#B8DFD8;
 $sideColor:white;
 $fontColor:#4C4C6D;
+$popBgColor : white;
+$popFontColor : #D83A56;
 
 //@include
 //&
 body{
     color: $fontColor;
     font-family: $noto-kr;
-    font-weight: 300;
+    font-weight: 500;
 }
 
 .wrap{
@@ -29,7 +31,7 @@ body{
         display: none;
     }   
     .header-wrapper{
-        border: 2px solid black;
+        @include border($px:1px,$color:#777);
         height: 50px;
         background-color: $headerColor;
         .header-wrap{
@@ -61,14 +63,14 @@ body{
                 .input-wrap{
                     @include fx($v:$CT);
                     height: 32px;
-                    border: 1px solid black;
+                    @include border($color:#777);
                     padding: 0;
                     border-radius: 0.5em;
                     .search{
                         width: 280px;
                         height: 30px;
                         border: none;
-                        border-radius: 0.5em;
+                        border-radius: 0.5em 0 0 0.5em;
                         padding-left: 0.5em;
                     }
                     .search_button{
@@ -101,7 +103,8 @@ body{
         background-color: $bgColor;
         .side-wrapper{
             position: relative;
-            border: 2px solid black;
+            @include border($color:#777);
+            border-top: 0;
             width: 180px;
             height:100%;
             background-color: $sideColor;
@@ -148,7 +151,7 @@ body{
                 flex-wrap: wrap; 
                 width: 102%;
                 margin: 0 auto;
-                padding: 30px 30px;
+                padding: 32px;
                 .content{
                     background-color: $postColor;
                     position: relative;
@@ -158,7 +161,7 @@ body{
                     margin-bottom: 2%;
                     @include shadow($x:10px,$y:10px,$b:10px,$o:0.1);
                     .info-wrap{
-                        font-size: 1.125em;
+                        font-size: 1em;
                         .i-wrap{
                             font-size: 1.25em;
                             position: absolute;
@@ -293,6 +296,7 @@ body{
     display: none;
     max-height: 90vh;
     overflow-y: scroll;
+    @include scrollNone;
     .write-popup{
         display: none;
         form{
@@ -352,43 +356,87 @@ body{
                 height: 180px;
                 resize: none;
             }
-
-            
-            
         }
     }
     .view-popup{
-        padding: 0.5em;
-        div:not(.button-wrap){
-            margin: 1em 0;
-            display: block;
-            border-bottom: 1px solid black;
-            padding: 1em 0;
-            @include fx;
-            span{
-                font-size: 1.25em;
-                padding-right: 0.625em;
-                font-weight: bold;
-                &::after{
-                    content: " /";
-                }
-            }
-            p{
-                font-size: 1.25em;
-            }
-        }
         display: none;
+        .header{
+            background-color: $headerColor;
+            height: 2.5em;
+            font-weight: bold;
+            @include fx($h:$SB,$v:$CT);
+            padding: 0.5em;
+            color: $fontColor;
+            @include border($color:#777);
+        }
+        .content{
+            padding: 0.5em;
+            table{
+                width: 100%;
+                text-align: center;
+                min-height: 10em;
+                border-spacing: 0px;
+                border-collapse: separate;
+                margin-bottom: 1em;
+                tr{
+                    td{
+                        padding: 0;
+                        @include border($color:#555);
+                        &:nth-child(1){
+                            width: 30%;
+                            font-weight: bold;
+                            color: $fontColor;
+                            background-color: $bgColor;
+                        }
+                        &:nth-child(2){
+                            
+                        }
+                    }
+                    
+                }
+                
+            }
+
+            // div:not(.button-wrap){
+            //     margin: 1em 0;
+            //     display: block;
+            //     border-bottom: 1px solid black;
+            //     padding: 1em 0;
+            //     @include fx;
+            //     span{
+            //         font-size: 1.25em;
+            //         padding-right: 0.625em;
+            //         font-weight: bold;
+            //         &::after{
+            //             content: " /";
+            //         }
+            //     }
+            //     p{
+            //         font-size: 1.25em;
+            //     }
+            // }
+
+        }  
     }
 
     .button-wrap{
         @include fx($h:$CT);
         .popup_button{
             border: 1px solid black;
+            background-color: $headerColor;
             font-size: 1.25em;
+            font-weight: 700;
             margin: 0 0.25em;
             cursor: pointer;
         }
     }  
 
+}
+
+///공용 CSS///
+.view-button{
+    font-size: 1.5em;
+    cursor: pointer;
+    display: inline;
 }
 
