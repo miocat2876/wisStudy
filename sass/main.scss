@@ -108,6 +108,7 @@ body{
             width: 180px;
             height:100%;
             background-color: $sideColor;
+            transition: all 0.5s;
             @include MD{
                 position: absolute;
                 left: -9999px;
@@ -462,3 +463,4 @@ body{
     display: inline;
 }
 
+//https://brunch.co.kr/@blackindigo-red/2
