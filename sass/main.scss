@@ -30,7 +30,7 @@ body{
     }   
     .header-wrapper{
         border: 2px solid black;
-        height: 8vh;
+        height: 50px;
         background-color: $headerColor;
         .header-wrap{
             width: 100%;
@@ -97,7 +97,7 @@ body{
     .center-wrapper{
         @include fx;
         position: relative;
-        height: 92vh;
+        height: calc(100vh - 50px);
         background-color: $bgColor;
         .side-wrapper{
             position: relative;
