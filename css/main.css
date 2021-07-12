@@ -76,7 +76,7 @@ a:link, a:visited, a:hover, a:active {
 .wrap .header-wrapper {
   border: 1px solid black;
   height: 8vh;
-  background-color: #FFE194;
+  background-color: #B8DFD8;
 }
 
 .wrap .header-wrapper .header-wrap {
@@ -173,7 +173,7 @@ a:link, a:visited, a:hover, a:active {
   flex-direction: row;
   position: relative;
   height: 92vh;
-  background-color: #B8DFD8;
+  background-color: #E8F6EF;
 }
 
 .wrap .center-wrapper .side-wrapper {
@@ -246,7 +246,7 @@ a:link, a:visited, a:hover, a:active {
 }
 
 .wrap .center-wrapper .content-wrapper .content-wrap .content {
-  background-color: #E8F6EF;
+  background-color: #FFE194;
   position: relative;
   width: 23%;
   height: 300px;
