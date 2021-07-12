@@ -316,7 +316,8 @@ body{
                 display: block;
                 margin: 0.5em 0;
                 width: calc(50% - 1em);
-                border: 1.5px solid black;
+                border: 1px solid #777;
+                @include shadow($x:0);
             }
             input:not(.calendar){
                 font-size: 1.5em;
@@ -329,12 +330,14 @@ body{
                     @include fx($h:$SB,$v:$CT);
                     font-size: 1.5em;
                     width: calc(50% - 0.5em);
-                    border: 1.5px solid black;
+                    border: 1px solid #777;
+                    @include shadow($x:0);
                     input{
                         width: 85%;
                         margin: 0;
                         display: inline-block;
                         border: none;
+                        box-shadow: 0 0 0 0;
                     }
                     i{
                         text-align: center;
