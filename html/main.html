@@ -175,6 +175,10 @@
 
     <div class="popup-wrap">
         <div class="write-popup">
+            <div class="header">
+                <p>상</p>
+                <i class="fas fa-times write-button exit-button"></i>
+            </div>
             <form action="">
                 <input type="text" id="" name="" placeholder="제목">
                 <input type="password" id="" name="" placeholder="비밀번호">
@@ -231,15 +235,15 @@
                 <textarea id="" name="" placeholder=""></textarea>
                 <input type="file" name="" id="">
                 <div class="button-wrap">
-                    <button type="submit" class="popup_button write-button">제출</button>
-                    <button type="button" class="popup_button write-button exit">닫기</button>
+                    <button type="submit" class="popup_button write-button"><i class="fas fa-edit"></i></button>
+                    <!-- <button type="button" class="popup_button write-button exit">닫기</button> -->
                 </div>
             </form>
         </div>
         <div class="view-popup">
             <div class="header">
                 <p>상</p>
-                <i class="fas fa-times view-button exit"></i>
+                <i class="fas fa-times view-button exit-button"></i>
             </div>
             <div class="content">
                 <table>
@@ -313,7 +317,7 @@
                 })
             });
 
-            $(".view-button.exit").click(function(){
+            $(".view-button.exit-button").click(function(){
                 popupManagement({"display":"none"},function(){
                     $(".view-popup").css("display","none");
                 })
@@ -325,7 +329,7 @@
                 })
             });
 
-            $(".write-button.exit").click(function(){
+            $(".write-button.exit-button").click(function(){
                 popupManagement({"display":"none"},function(){
                     $(".write-popup").css("display","none");
                 })
