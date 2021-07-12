@@ -272,6 +272,7 @@ body {
 }
 
 .wrap .center-wrapper .content-wrapper .content-wrap .content .info-wrap .i-wrap {
+  font-size: 1.25em;
   position: absolute;
   right: 0.25em;
   top: 0;
