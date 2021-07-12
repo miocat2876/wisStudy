@@ -5,6 +5,7 @@
 
 .wrap{
     color: #4C4C6D;
+    font-weight: bold;
     .popup-on{
         position: fixed;
         top: 0;
@@ -18,7 +19,7 @@
         display: none;
     }   
     .header-wrapper{
-        border: 1px solid black;
+        border: 2px solid black;
         height: 8vh;
         background-color: #B8DFD8;
         .header-wrap{
@@ -122,10 +123,11 @@
             }
         }
         .content-wrapper{
-            border: 1px solid black;
+            
             width: calc(100% - 180px);
             overflow-x: hidden;
             overflow-y: scroll;
+            @include scrollNone;
             height:100%;
             @include MD{
                 width: 100vw;
@@ -136,15 +138,15 @@
                 width: 102%;
                 margin: 0 auto;
                 padding: 30px 30px;
+                margin-bottom: 8vh;
                 .content{
                     background-color: #FFE194;
                     position: relative;
                     width: 23%;
-                    height: 300px;
+                    height: 200px;
                     margin-right: 2%;
                     margin-bottom: 2%;
-                    padding: 1em;
-                    @include shadow($o:0.1);
+                    @include shadow($x:10px,$y:10px,$b:10px,$o:0.1);
                     .info-wrap{
                         font-size: 1.125em;
                         .i-wrap{
@@ -159,26 +161,26 @@
                             }
                         }
                         .info{
-                            padding: 0.5em;
+                            padding: 1em;
                             .title{
                                 font-weight: bold;
+                                font-size: 1.5em;
                                 margin: 0.625em 0;
                                 text-align: center;
+                                @include ellipsis;
                             }
                             div{
                                 padding: 0.125em 0;
                                 span{
                                     &::after{
-                                        content: " / ";
+                                        content: " ";
                                     }
                                 }
                             }
-                            
                         }
                     }
                     @include LG{
                         width: 31%;
-                        height: 300px;
                         .info-wrap{
                             //font-size: 1.25em;
                             .image-wrap{
@@ -190,7 +192,6 @@
                     }
                     @include MD{
                         width: 31%;
-                        height: 300px;
                         .info-wrap{
                             //font-size: 1.25em;
                             .image-wrap{
@@ -202,7 +203,6 @@
                     }
                     @include SM{
                         width: 48%;
-                        height: 300px;
                         .info-wrap{
                             //font-size: 1.25em;
                             .image-wrap{
@@ -214,7 +214,6 @@
                     }
                     @include XS{
                         width: 98%;
-                        height: 300px;
                         .info-wrap{
                             //font-size: 1.25em;
                             .image-wrap{
@@ -228,12 +227,16 @@
             }
             .footer-wrap{
                 width: 100%;
-                background-color: #FFE194;
-                height: 100px;
+                @include border($px:2px);
+                background-color: #B8DFD8;
+                height: 8vh;
+                position: absolute;
+                bottom: 0;
             }
+            
         }
     }
-    
+       
 }
 
 // .search-info{
