@@ -89,7 +89,6 @@
             border: 1px solid black;
             width: 180px;
             height:100%;
-            overflow-y: scroll;
             background-color: white;
             @include MD{
                 position: absolute;
@@ -111,6 +110,8 @@
                 }
             }
             .serach-wrap{
+                position: absolute;
+                bottom: 0;
                 padding: 0.5em;
                 input{
                     width: 80%;
@@ -133,13 +134,21 @@
                 margin: 0 auto;
                 padding: 30px 30px;
                 .content{
-                    border: 1px solid black;
+                    position: relative;
                     width: 23%;
                     height: 300px;
                     margin-right: 2%;
                     margin-bottom: 2%;
+                    padding: 1em;
+                    @include shadow($o:0.1);
                     .info-wrap{
                         font-size: 1.125em;
+                        .i-wrap{
+                            position: absolute;
+                            right: 0.25em;
+                            top: 0;
+                            transform: rotate(45deg);
+                        }
                         .image-wrap{
                             img{
                                 height: 120px;
@@ -213,8 +222,14 @@
                     }
                 }
             }
+            .footer-wrap{
+                width: 100%;
+                @include border;
+                height: 100px;
+            }
         }
     }
+    
 }
 
 // .search-info{
@@ -355,4 +370,6 @@
             cursor: pointer;
         }
     }  
+
 }
+
