@@ -409,7 +409,8 @@ body {
   display: block;
   margin: 0.5em 0;
   width: calc(50% - 1em);
-  border: 1.5px solid black;
+  border: 1px solid #777;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
 }
 
 .popup-wrap .write-popup form input:not(.calendar) {
@@ -434,7 +435,8 @@ body {
   flex-direction: row;
   font-size: 1.5em;
   width: calc(50% - 0.5em);
-  border: 1.5px solid black;
+  border: 1px solid #777;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
 }
 
 .popup-wrap .write-popup form .date fieldset input {
@@ -442,6 +444,7 @@ body {
   margin: 0;
   display: inline-block;
   border: none;
+  box-shadow: 0 0 0 0;
 }
 
 .popup-wrap .write-popup form .date fieldset i {
