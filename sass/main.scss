@@ -343,14 +343,14 @@ body{
                         height: 30px;
                         width: 100%;
                         &:focus{
-                            border: 1px solid #000;
+                            border: 1px solid $fontColor;
                         }
                     }
                     .date{
                         position: absolute;
                         right: 2%;
                         line-height: 30px;
-                        z-index: 1;
+                        z-index: 0;
                     }
                     // display: inline-block;
                 }
@@ -373,7 +373,7 @@ body{
                         border: 1px solid #999;
                         width: 100%;
                         &:focus{
-                            border: 1px solid #000;
+                            border: 1px solid $fontColor;
                         }
                     } 
                 }
