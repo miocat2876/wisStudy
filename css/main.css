@@ -451,14 +451,14 @@ body {
 }
 
 .popup-wrap .write-popup .content form fieldset input:focus {
-  border: 1px solid #000;
+  border: 1px solid #4C4C6D;
 }
 
 .popup-wrap .write-popup .content form fieldset .date {
   position: absolute;
   right: 2%;
   line-height: 30px;
-  z-index: 1;
+  z-index: 0;
 }
 
 .popup-wrap .write-popup .content form .selectbox-wrap {
@@ -491,7 +491,7 @@ body {
 }
 
 .popup-wrap .write-popup .content form .selectbox-wrap select:focus {
-  border: 1px solid #000;
+  border: 1px solid #4C4C6D;
 }
 
 .popup-wrap .view-popup {
