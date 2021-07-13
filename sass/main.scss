@@ -156,7 +156,7 @@ body{
                 .content{
                     background-color: $postColor;
                     position: relative;
-                    width: calc(25% - 2em);
+                    width: calc(25% - 1em);
                     height: 200px;
                     margin-right: 1em;
                     margin-bottom: 1em;
@@ -201,7 +201,7 @@ body{
                         }
                     }
                     @include LG{
-                        width: calc(33.333% - 2em);
+                        width: calc(33.333% - 1em);
                         .info-wrap{
                             //font-size: 1.25em;
                             .image-wrap{
@@ -212,7 +212,7 @@ body{
                         }
                     }
                     @include MD{
-                        width: calc(33.333% - 2em);
+                        width: calc(33.333% - 1em);
                         .info-wrap{
                             //font-size: 1.25em;
                             .image-wrap{
@@ -223,7 +223,7 @@ body{
                         }
                     }
                     @include SM{
-                        width: calc(50% - 2em);
+                        width: calc(50% - 1em);
                         .info-wrap{
                             //font-size: 1.25em;
                             .image-wrap{
@@ -234,7 +234,7 @@ body{
                         }
                     }
                     @include XS{
-                        width: calc(100% - 2em);
+                        width: calc(100% - 1em);
                         .info-wrap{
                             //font-size: 1.25em;
                             .image-wrap{
