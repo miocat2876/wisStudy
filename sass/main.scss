@@ -17,7 +17,7 @@ body{
 }
 
 .wrap{
-
+    position: relative;
     .popup-on{
         position: fixed;
         top: 0;
@@ -294,109 +294,120 @@ body{
     width: 90vw;
     background-color: white;
     display: none;
-    max-height: 90vh;
+    max-height: 95vh;
     overflow-y: scroll;
     @include scrollNone;
-
+    .header{
+        position: fixed;
+        width: 100%;
+        top: 0;
+        background-color: $headerColor;
+        height: 2.5em;
+        font-weight: bold;
+        @include fx($h:$SB,$v:$CT);
+        padding: 0 1em;
+        color: $fontColor;
+        @include border($px:1px,$color:#777);
+        border-bottom: 0;
+        z-index: 0;
+    }
+    .content-wrap{
+        position: relative;
+        top:2.5em;
+        z-index: 0;
+    }
     .write-popup{
         display: none;
-        .header{
-            background-color: $headerColor;
-            height: 2.5em;
-            font-weight: bold;
-            @include fx($h:$SB,$v:$CT);
-            padding: 0 1em;
-            color: $fontColor;
-            @include border($px:1px,$color:#777);
-            border-bottom: 0;
-        }
-        form{
-            @include border($px:1px,$color:#777);
-            padding: 1em;
-            fieldset{
-                border: 0;
-                margin-bottom: 0.5em;
-                position: relative;
-                p{
-                    color: black;
-                    font-weight: 500;
-                    margin-bottom: 0.125em;
-                }
-                input{
-                    border: 1px solid #777;
-                    height: 30px;
-                    width: 100%;
-                }
-                .date{
-                    position: absolute;
-                    right: 2%;
-                    line-height: 30px;
-                    z-index: 1;
-                }
-                // display: inline-block;
-            }
-            .selectbox-wrap{
-                @include fx();
-                p{
-                    color: black;
-                    font-weight: 500;
-                    margin-bottom: 0.125em;
-                }
-                .selectbox{
-                    width: 25%;
-                    &:not(:last-child){
-                        margin-right: 1em;
-                        width: calc(25% - 1em);
+        .content{
+            form{
+                @include border($px:1px,$color:#777);
+                padding: 1em;
+                fieldset{
+                    border: 0;
+                    margin-bottom: 0.5em;
+                    position: relative;
+                    label{
+                        @include fx();
+                        p{
+                            color: #333;
+                            font-weight: 500;
+                            margin-bottom: 0.125em;
+                        }
+                        .range_desc{
+                            font-size: 0.75em;
+                            line-height: 1.4em;
+                        }    
                     }
+                    
+                    input{
+                        border: 1px solid #999;
+                        height: 30px;
+                        width: 100%;
+                        &:focus{
+                            border: 1px solid #000;
+                        }
+                    }
+                    .date{
+                        position: absolute;
+                        right: 2%;
+                        line-height: 30px;
+                        z-index: 1;
+                    }
+                    // display: inline-block;
                 }
-                select{
-                    border: 1px solid #555;
-                    width: 100%;
+                .selectbox-wrap{
+                    @include fx();
+                    margin-bottom: 0.875em;
+                    p{
+                        color: #333;
+                        font-weight: 500;
+                        margin-bottom: 0.125em;
+                    }
+                    .selectbox{
+                        width: 33.333%;
+                        &:not(:last-child){
+                            margin-right: 1em;
+                            width: calc(33.333% - 1em);
+                        }
+                    }
+                    select{
+                        border: 1px solid #999;
+                        width: 100%;
+                        &:focus{
+                            border: 1px solid #000;
+                        }
+                    } 
                 }
-                margin-bottom: 0.5em;
             }
         }
     }
     .view-popup{
         display: none;
-        .header{
-            background-color: $headerColor;
-            height: 2.5em;
-            font-weight: bold;
-            @include fx($h:$SB,$v:$CT);
-            padding: 0.5em;
-            color: $fontColor;
-            @include border($px:1px,$color:#777);
-            border-bottom: 0;
-        }
-        .content{
-            padding: 0.5em;
-            @include border($px:1px,$color:#777);
-            table{
-                width: 100%;
-                text-align: center;
-                min-height: 10em;
-                border-spacing: 0px;
-                border-collapse: separate;
-                margin-bottom: 1em;
-                tr{
-                    td{
-                        padding: 0;
-                        @include border($color:#555);
-                        &:nth-child(1){
-                            width: 30%;
-                            font-weight: bold;
-                            color: $fontColor;
-                            background-color: $bgColor;
-                        }
-                        &:nth-child(2){
-                            
-                        }
+        height: 50vh;
+        table{
+            width: 100%;
+            text-align: center;
+            min-height: 10em;
+            border-spacing: 0px;
+            border-collapse: separate;
+            margin-bottom: 1em;
+            tr{
+                td{
+                    padding: 0;
+                    @include border($color:#555);
+                    &:nth-child(1){
+                        width: 30%;
+                        font-weight: bold;
+                        color: $fontColor;
+                        background-color: $bgColor;
                     }
-                    
+                    &:nth-child(2){
+                        
+                    }
                 }
                 
             }
+                
 
             // div:not(.button-wrap){
             //     margin: 1em 0;
@@ -427,7 +438,7 @@ body{
             background-color: $headerColor;
             font-size: 1.25em;
             font-weight: bold;
-            margin: 0 0.25em;
+            margin: 0.5em;
             cursor: pointer;
             &:active{
                 opacity: 0.7;
