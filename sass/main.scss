@@ -384,7 +384,7 @@ body{
         display: none;
         .content{
             padding: 0 4em;
-            margin-top: 0.5em;
+            margin: 0.5em 0;
             .title{
                 text-align: center;
                 font-weight: bold;
@@ -392,26 +392,24 @@ body{
                 margin: 0.5em 0;
             }
             .info{
-                div{
-                    margin: 0.25em 0;
-                }
-                .date{
-
+                & > div{
+                    padding-bottom: 0.5em;
+                    border-bottom: 1px solid rgba(0,0,0,.2);
                 }
                 .group1{
                     @include fx();
                     div{
                         padding-right: 0.5em;
                     }
-    
                 }
                 .group2{
-                    
                 }
             }
             .contents{
-                margin-top: 20px;
+                border: 1px solid rgba(0,0,0,.2);
+                margin-top: 0.5em;
                 min-height: 50px;
+                padding: 0.5em;
             }
         }
     }
