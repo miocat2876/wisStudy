@@ -294,9 +294,7 @@ body{
     width: 90vw;
     background-color: white;
     display: none;
-    max-height: 95vh;
-    overflow-y: scroll;
-    @include scrollNone;
+    border: 1px solid #777;
     .header{
         position: fixed;
         width: 100%;
@@ -307,20 +305,21 @@ body{
         @include fx($h:$SB,$v:$CT);
         padding: 0 1em;
         color: $fontColor;
-        @include border($px:1px,$color:#777);
-        border-bottom: 0;
-        z-index: 0;
+        border-bottom : 1px solid #777;
+        z-index: 1;
     }
     .content-wrap{
         position: relative;
-        top:2.5em;
+        padding-top: 2.5em;
         z-index: 0;
+        max-height: calc(95vh - 2.5em);
+        overflow-y: scroll;
+        @include scrollNone;
     }
     .write-popup{
         display: none;
         .content{
             form{
-                @include border($px:1px,$color:#777);
                 padding: 1em;
                 fieldset{
                     border: 0;
@@ -383,52 +382,54 @@ body{
     }
     .view-popup{
         display: none;
-        height: 50vh;
-        table{
-            width: 100%;
-            text-align: center;
-            min-height: 10em;
-            border-spacing: 0px;
-            border-collapse: separate;
-            margin-bottom: 1em;
-            tr{
-                td{
-                    padding: 0;
-                    @include border($color:#555);
-                    &:nth-child(1){
-                        width: 30%;
-                        font-weight: bold;
-                        color: $fontColor;
-                        background-color: $bgColor;
+        .content{
+            padding: 0 5em;
+            table{
+                width: 100%;
+                text-align: center;
+                min-height: 10em;
+                border-spacing: 0px;
+                border-collapse: separate;
+                margin-bottom: 1em;
+                tr{
+                    td{
+                        padding: 0;
+                        @include border($color:#555);
+                        &:nth-child(1){
+                            width: 30%;
+                            font-weight: bold;
+                            color: $fontColor;
+                            background-color: $bgColor;
+                        }
+                        &:nth-child(2){
+                            
+                        }
                     }
-                    &:nth-child(2){
-                        
-                    }
+                    
                 }
-                
-            }
-                
+                    
 
-            // div:not(.button-wrap){
-            //     margin: 1em 0;
-            //     display: block;
-            //     border-bottom: 1px solid black;
-            //     padding: 1em 0;
-            //     @include fx;
-            //     span{
-            //         font-size: 1.25em;
-            //         padding-right: 0.625em;
-            //         font-weight: bold;
-            //         &::after{
-            //             content: " /";
-            //         }
-            //     }
-            //     p{
-            //         font-size: 1.25em;
-            //     }
-            // }
+                // div:not(.button-wrap){
+                //     margin: 1em 0;
+                //     display: block;
+                //     border-bottom: 1px solid black;
+                //     padding: 1em 0;
+                //     @include fx;
+                //     span{
+                //         font-size: 1.25em;
+                //         padding-right: 0.625em;
+                //         font-weight: bold;
+                //         &::after{
+                //             content: " /";
+                //         }
+                //     }
+                //     p{
+                //         font-size: 1.25em;
+                //     }
+                // }
 
-        }  
+            }  
+        }
     }
 
     .button-wrap{
