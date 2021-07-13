@@ -156,10 +156,10 @@ body{
                 .content{
                     background-color: $postColor;
                     position: relative;
-                    width: 23%;
+                    width: calc(25% - 2em);
                     height: 200px;
-                    margin-right: 2%;
-                    margin-bottom: 2%;
+                    margin-right: 1em;
+                    margin-bottom: 1em;
                     @include shadow($x:10px,$y:10px,$b:10px,$o:0.1);
                     .info-wrap{
                         font-size: 1em;
@@ -191,11 +191,14 @@ body{
                                         content: " ";
                                     }
                                 }
+                                &:last-child{
+                                    @include fx($h:$FE);
+                                }
                             }
                         }
                     }
                     @include LG{
-                        width: 31%;
+                        width: calc(33.333% - 2em);
                         .info-wrap{
                             //font-size: 1.25em;
                             .image-wrap{
@@ -206,7 +209,7 @@ body{
                         }
                     }
                     @include MD{
-                        width: 31%;
+                        width: calc(33.333% - 2em);
                         .info-wrap{
                             //font-size: 1.25em;
                             .image-wrap{
@@ -217,7 +220,7 @@ body{
                         }
                     }
                     @include SM{
-                        width: 48%;
+                        width: calc(50% - 2em);
                         .info-wrap{
                             //font-size: 1.25em;
                             .image-wrap{
@@ -228,7 +231,7 @@ body{
                         }
                     }
                     @include XS{
-                        width: 98%;
+                        width: calc(100% - 2em);
                         .info-wrap{
                             //font-size: 1.25em;
                             .image-wrap{
