@@ -266,7 +266,7 @@ body {
 .wrap .center-wrapper .content-wrapper .content-wrap .content {
   background-color: #FFE194;
   position: relative;
-  width: calc(25% - 2em);
+  width: calc(25% - 1em);
   height: 200px;
   margin-right: 1em;
   margin-bottom: 1em;
@@ -327,25 +327,25 @@ body {
 
 @media screen and (max-width: 1200px) {
   .wrap .center-wrapper .content-wrapper .content-wrap .content {
-    width: calc(33.333% - 2em);
+    width: calc(33.333% - 1em);
   }
 }
 
 @media screen and (max-width: 992px) {
   .wrap .center-wrapper .content-wrapper .content-wrap .content {
-    width: calc(33.333% - 2em);
+    width: calc(33.333% - 1em);
   }
 }
 
 @media screen and (max-width: 768px) {
   .wrap .center-wrapper .content-wrapper .content-wrap .content {
-    width: calc(50% - 2em);
+    width: calc(50% - 1em);
   }
 }
 
 @media screen and (max-width: 576px) {
   .wrap .center-wrapper .content-wrapper .content-wrap .content {
-    width: calc(100% - 2em);
+    width: calc(100% - 1em);
   }
 }
 
