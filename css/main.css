@@ -321,6 +321,10 @@ body {
   flex-direction: row;
 }
 
+.wrap .center-wrapper .content-wrapper .content-wrap .content .info-wrap .info div:last-child i {
+  cursor: pointer;
+}
+
 @media screen and (max-width: 1200px) {
   .wrap .center-wrapper .content-wrapper .content-wrap .content {
     width: calc(33.333% - 2em);

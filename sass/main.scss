@@ -193,6 +193,9 @@ body{
                                 }
                                 &:last-child{
                                     @include fx($h:$FE);
+                                    i{
+                                        cursor: pointer;
+                                    }
                                 }
                             }
                         }
