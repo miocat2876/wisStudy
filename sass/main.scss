@@ -340,7 +340,6 @@ body{
                             line-height: 1.4em;
                         }    
                     }
-                    
                     input{
                         border: 1px solid rgba(0,0,0,.2);
                         height: 30px;
@@ -395,17 +394,42 @@ body{
                 margin: 0.5em 0;
             }
             .info{
-                & > div{
-                    padding-bottom: 0.5em;
+                & > div:not(.group1){
+                    padding-bottom: 0.25em;
                     border-bottom: 1px solid rgba(0,0,0,.2);
+                }
+                .date{
+                    p{
+                        display: inline;
+                    }
                 }
                 .group1{
                     @include fx();
+                    border-bottom: 1px solid rgba(0,0,0,.2);    
+                    @include XS{
+                        display: block;
+                        border-bottom: none;
+                    }
+                    &>div{
+                        @include fx();
+                        @include XS{
+                            border-bottom: 1px solid rgba(0,0,0,.2);
+                        }
+                        padding-bottom: 0.25em; 
+                    }
                     div{
                         padding-right: 0.5em;
+                        p{
+                            display: inline;
+                        }
                     }
                 }
                 .group2{
+                    div{
+                        p{
+                            display: inline;
+                        }
+                    }
                 }
             }
             .contents{

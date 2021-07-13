@@ -518,9 +518,13 @@ body {
   margin: 0.5em 0;
 }
 
-.popup-wrap .view-popup .content .info > div {
-  padding-bottom: 0.5em;
+.popup-wrap .view-popup .content .info > div:not(.group1) {
+  padding-bottom: 0.25em;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.popup-wrap .view-popup .content .info .date p {
+  display: inline;
 }
 
 .popup-wrap .view-popup .content .info .group1 {
@@ -529,10 +533,41 @@ body {
   align-items: stretch;
   flex-wrap: wrap;
   flex-direction: row;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 576px) {
+  .popup-wrap .view-popup .content .info .group1 {
+    display: block;
+    border-bottom: none;
+  }
+}
+
+.popup-wrap .view-popup .content .info .group1 > div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding-bottom: 0.25em;
+}
+
+@media screen and (max-width: 576px) {
+  .popup-wrap .view-popup .content .info .group1 > div {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  }
 }
 
 .popup-wrap .view-popup .content .info .group1 div {
   padding-right: 0.5em;
+}
+
+.popup-wrap .view-popup .content .info .group1 div p {
+  display: inline;
+}
+
+.popup-wrap .view-popup .content .info .group2 div p {
+  display: inline;
 }
 
 .popup-wrap .view-popup .content .contents {
