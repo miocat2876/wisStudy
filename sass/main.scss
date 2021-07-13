@@ -150,13 +150,14 @@ body{
             .content-wrap{
                 display: flex;
                 flex-wrap: wrap; 
-                width: 102%;
+                width: calc(100% + 2em);
                 margin: 0 auto;
                 padding: 32px;
                 .content{
                     background-color: $postColor;
                     position: relative;
                     width: calc(25% - 1em);
+                    max-width: 240px;
                     height: 200px;
                     margin-right: 1em;
                     margin-bottom: 1em;
@@ -297,7 +298,8 @@ body{
 
 .popup-wrap{
     @include center(150);
-    width: 90vw;
+    max-width: 90vw;
+    min-width: 50vw;
     background-color: white;
     display: none;
     border: 1px solid #777;
