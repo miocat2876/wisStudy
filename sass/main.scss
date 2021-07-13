@@ -63,7 +63,7 @@ body{
                 .input-wrap{
                     @include fx($v:$CT);
                     height: 32px;
-                    @include border($color:#777);
+                    @include border($color:#555);
                     padding: 0;
                     border-radius: 0.5em;
                     .search{
@@ -330,7 +330,7 @@ body{
                         p{
                             color: #333;
                             font-weight: 500;
-                            margin-bottom: 0.125em;
+                            margin-bottom: 0.25em;
                         }
                         .range_desc{
                             font-size: 0.75em;
@@ -339,13 +339,13 @@ body{
                     }
                     
                     input{
-                        border: 1px solid #999;
+                        border: 1px solid rgba(0,0,0,.2);
                         height: 30px;
                         width: 100%;
                         &:focus{
                             border: 1px solid $fontColor;
                         }
-                    }
+                    } 
                     .date{
                         position: absolute;
                         right: 2%;
@@ -370,7 +370,7 @@ body{
                         }
                     }
                     select{
-                        border: 1px solid #999;
+                        border: 1px solid rgba(0,0,0,.2);
                         width: 100%;
                         &:focus{
                             border: 1px solid $fontColor;
@@ -383,52 +383,36 @@ body{
     .view-popup{
         display: none;
         .content{
-            padding: 0 5em;
-            table{
-                width: 100%;
+            padding: 0 4em;
+            margin-top: 0.5em;
+            .title{
                 text-align: center;
-                min-height: 10em;
-                border-spacing: 0px;
-                border-collapse: separate;
-                margin-bottom: 1em;
-                tr{
-                    td{
-                        padding: 0;
-                        @include border($color:#555);
-                        &:nth-child(1){
-                            width: 30%;
-                            font-weight: bold;
-                            color: $fontColor;
-                            background-color: $bgColor;
-                        }
-                        &:nth-child(2){
-                            
-                        }
+                font-weight: bold;
+                font-size: 1.75em;
+                margin: 0.5em 0;
+            }
+            .info{
+                div{
+                    margin: 0.25em 0;
+                }
+                .date{
+
+                }
+                .group1{
+                    @include fx();
+                    div{
+                        padding-right: 0.5em;
                     }
+    
+                }
+                .group2{
                     
                 }
-                    
-
-                // div:not(.button-wrap){
-                //     margin: 1em 0;
-                //     display: block;
-                //     border-bottom: 1px solid black;
-                //     padding: 1em 0;
-                //     @include fx;
-                //     span{
-                //         font-size: 1.25em;
-                //         padding-right: 0.625em;
-                //         font-weight: bold;
-                //         &::after{
-                //             content: " /";
-                //         }
-                //     }
-                //     p{
-                //         font-size: 1.25em;
-                //     }
-                // }
-
-            }  
+            }
+            .contents{
+                margin-top: 20px;
+                min-height: 50px;
+            }
         }
     }
 

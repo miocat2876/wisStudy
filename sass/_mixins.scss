@@ -7,15 +7,12 @@
 	flex-wrap: $w;
 	flex-direction: $direction;
 }
-
 @mixin fx-wrap($w:wrap) {
 	flex-wrap: $w;
 }
-
 @mixin fx-col {
 	flex-direction: column;
 }
-
 @mixin center($z:auto) {
 	z-index: $z;
 	position: absolute;
@@ -23,27 +20,22 @@
 	left: 50%;
 	transform: translate(-50%,-50%);
 }
-
-
 @mixin wrapper($w: $LG) {
 	max-width: $w;
 	margin: 0 auto;
 }
-
 @mixin shadow($x:5px,$y:5px,$b:5px,$o:0.5) {
 	box-shadow: $x $y $b rgba(0,0,0,$o);
 }
 @mixin shadow-light($x:0,$y:0,$b:5px,$o:0.5) {
 	box-shadow: 5px 5px 10px rgba(255,255,255,$o);
 }
-
 @mixin text-shadow($x:0,$y:0,$b:5px,$o:0.5) {
 	text-shadow: 5px 5px 10px rgba(0,0,0,$o);
 }
 @mixin text-shadow-light($x:0,$y:0,$b:5px,$o:0.5) {
 	text-shadow: 5px 5px 10px rgba(255,255,255,$o);
 }
-
 @mixin bt-primary() {
 	background-color: $primary;
 	color: $light;
@@ -56,14 +48,12 @@
 		color: $primary-dark;
 	}
 }
-
 @mixin header-title($s:1.5rem,$c:$dark,$w:normal) {
 	font-size: $s;
 	color: $c;
 	font-weight: $w;
 	text-align: center;
 }
-
 @mixin link-hover($w:2px,$c:$dark,$g:0.5em,$s:0.5s) {
 	&::after{
 		display: block;
@@ -82,22 +72,17 @@
 	 	}
 	 }
 }
-
 @mixin ellipsis($w:100%) {
 	display:inline-block;
 	width:$w;
 	white-space:nowrap;
 	overflow:hidden;
 	text-overflow:ellipsis;
-	
 }
-
 @mixin border($px:1px,$color:black) {
 	border: $px solid $color;
 }
-
 @mixin multiEllipsis($w:100%,$line:3,$lh:1.2em) {
-
 	display:-webkit-box;
 	-webkit-line-clamp:$line; /* 라인수 */
 	-webkit-box-orient:vertical;
@@ -109,16 +94,13 @@
 	text-align:left;
 	word-wrap: break-word; 
 }
-
 @mixin scrollNone() {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-&::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera*/
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+	&::-webkit-scrollbar {
+			display: none; /* Chrome, Safari, Opera*/
+	}
 }
-}
-
-
 /**************** 반응형 ****************/
 
 @mixin XL {
@@ -156,7 +138,6 @@
 	}
 	
 }
-
 @mixin HXL {
 	@media screen and(max-height:$XL) {
 		@content;
@@ -178,7 +159,6 @@
 	}
 	
 }
-
 @mixin HSM {
 	@media screen and(max-height:$SM) {
 		@content;
