@@ -156,8 +156,7 @@ body{
                 .content{
                     background-color: $postColor;
                     position: relative;
-                    width: calc(25% - 1em);
-                    max-width: 240px;
+                    width: calc(20% - 1em);
                     height: 200px;
                     margin-right: 1em;
                     margin-bottom: 1em;
@@ -202,7 +201,7 @@ body{
                         }
                     }
                     @include LG{
-                        width: calc(33.333% - 1em);
+                        width: calc(25% - 1em);
                         .info-wrap{
                             //font-size: 1.25em;
                             .image-wrap{
@@ -303,6 +302,10 @@ body{
     background-color: white;
     display: none;
     border: 1px solid #777;
+
+    @include SM{
+        min-width: 90vw;
+    }
     .header{
         position: fixed;
         width: 100%;
