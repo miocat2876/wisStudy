@@ -189,15 +189,16 @@
                 <form action="">
                     <fieldset>
                         <label for="pop_title"><p>제목</p></label>
-                        <input type="text" id="pop_title" name="">
+                        <input type="text" id="pop_title" name="" required>
                     </fieldset>
                     <fieldset>
                         <label for="pop_password"><p>비밀번호</p></label>
-                        <input type="password" id="pop_password" name="">
+                        <input type="password" id="pop_password" name="" required>
+                        <div class="ment"><span></span><p>영문 숫자 특수문자 2가지 이상 8~15자 조합으로 입력해 주세요.</p></div>
                     </fieldset>
                     <fieldset>
                         <label for="pop_startDate"><p>시작일</p></label>
-                        <input type="text" class="calendar" id="pop_startDate" name="startDate" readonly>
+                        <input type="text" class="calendar" id="pop_startDate" name="startDate" readonly required>
                         <i class="far fa-calendar-alt date"></i>
                     </fieldset>
                     <fieldset>
@@ -207,30 +208,30 @@
                     </fieldset>
                     <fieldset>
                         <label for="pop_contact"><p>연락처</p></label>
-                        <input type="text" id="contact" name="">
+                        <input type="text" id="contact" name="" required>
                     </fieldset>
                     <fieldset>
                         <label for="pop_person"><p>인원</p><p class="range_desc">(5명)</p></label>
-                        <input type="range" id="pop_person" name="">
+                        <input type="range" id="pop_person" name="" required>
                     </fieldset>
                     <div class="selectbox-wrap">
                         <div class="place-wrap selectbox">
                             <p>장소</p>
-                            <select name="" id="place">
+                            <select name="" id="place" required>
                                 <option value="00000">선택</option>
                                 <option value="00001">서울</option>
                             </select>
                         </div>
                         <div class="language selectbox">
                             <p>언어</p>
-                            <select name="" id="language">
+                            <select name="" id="language" required>
                                 <option value="00001">선택</option>
                                 <option value="00001">C</option>
                             </select>
                         </div>
                         <div class="department selectbox">
                             <p>분야</p>
-                            <select name="" id="department">
+                            <select name="" id="department" required>
                                 <option value="00001">선택</option>
                                 <option value="00001">웹</option>
                             </select>

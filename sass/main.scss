@@ -362,6 +362,18 @@ body{
                         line-height: 30px;
                         z-index: 0;
                     }
+                    #pop_password{
+                        &:hover + .ment > p{
+                            display: block;
+                        }
+                    }
+                    .ment{
+                        p{
+                            display: none;
+                            padding-top: 0.25em;
+                            font-size: 0.625em
+                        }
+                    }
                     // display: inline-block;
                 }
                 .selectbox-wrap{

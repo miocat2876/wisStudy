@@ -480,6 +480,16 @@ body {
   z-index: 0;
 }
 
+.popup-wrap .write-popup .content form fieldset #pop_password:hover + .ment > p {
+  display: block;
+}
+
+.popup-wrap .write-popup .content form fieldset .ment p {
+  display: none;
+  padding-top: 0.25em;
+  font-size: 0.625em;
+}
+
 .popup-wrap .write-popup .content form .selectbox-wrap {
   display: flex;
   justify-content: flex-start;
