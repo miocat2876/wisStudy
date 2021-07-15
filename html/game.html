@@ -17,32 +17,78 @@
   <title>Document</title>
   <style>
     #app{
-      position: absolute;
-      bottom: 5%;
+      /* position: absolute;
+      bottom: 5%; */
     }
-      table{
-        border-collapse: separate;
-        border-spacing: 0;
-      }
-      .block{
-        border: 1px solid black;
-        width: 30px;
-        height: 30px;
+    table{
+      border-collapse: separate;
+      border-spacing: 0;
+    }
+    .block{
+      border: 1px solid black;
+      width: 30px;
+      height: 30px;
 
-      }
-      .empty{
-        background-color: white;
-      }
-      .notEmpty{
-        background-color: black;
-      }
+    }
+    .empty{
+      background-color: white;
+    }
+    .notEmpty{
+      background-color: black;
+    }
+    .pad{
+        position: absolute;
+        bottom: 5%;
+        right: 5%;
+        width: 100px;
+        height: 100px;
+    }
+    #up{
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    }
+    #left{
+      position: absolute;
+      bottom: 50%;
+      left: 0%;
+      transform: translate(-50%,-50%);
+    }
+    #right{
+      position: absolute;
+      bottom: 50%;
+      left: 100%;
+      transform: translate(-50%,-50%);
+    }
+    #down{
+      position: absolute;
+      bottom: 0%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    }
+    #space{
+      position: absolute;
+      bottom: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    }
+    span i{
+      font-size: 2em;
+    }
 
   </style>
 </head>
 <body>
 
   <div id="app"></div>
-
+  <div class="pad">
+    <span id="up"onclick="evet(38);"><i class="fas fa-arrow-circle-up"></i></span>
+    <span id="left"onclick="evet(37);"><i class="fas fa-arrow-circle-left"></i></span>
+    <span id="right"onclick="evet(39);"><i class="fas fa-arrow-circle-right"></i></span>
+    <span id="space"onclick="evet(32);"><i class="far fa-circle"></i></span>
+    <span id="down" onclick="evet(40);"><i class="fas fa-arrow-circle-down"></i></span>
+  </div>
 
 
   <script>
@@ -66,7 +112,9 @@
       #app;
       #tableBody;
       #current = {};
+      #currentCopy = {};
       #prevShape = [];
+      #maxY = -1;
       //첫번째 행기준으로 잡음.
       #shape = {
         0:{0:{0:{x:0,y:0},1:{x:1,y:0},2:{x:1,y:1},3:{x:1,y:2}},
@@ -92,69 +140,107 @@
         this.#app.appendChild(table);
         this.#x = x;
         this.#y = y;
-        this.create();
         for(let i = 0;i<this.#y;i++){
           this.#view[i] = [];
           for(let j = 0;j<this.#x;j++){
             this.#view[i][j] = 0;
           }
         }
+        this.create();
       }
 
       pos(){
         //x,y현재좌표와 shape,pos로 state를 만듬
         //기존 좌표 제거
         //벨리데이션 만든 state를 현재 view와 비교함
-        let prevShape = [];
-        console.log(this.#current.pos);
+        
         this.#current.pos += 1;
-        console.log(this.#current.pos);
         if(this.#current.pos === 4)
           this.#current.pos = 0;
-        console.log(this.#current);
-        let current = this.#current;
-        let shape = JSON.parse(JSON.stringify(this.#shape));//느림
-        let state = shape[this.#current.shape][this.#current.pos];
-        for (let index = 0; index < 4; index++) {
-            state[index].x += current.x;
-            state[index].y += current.y;
-            //상태 저장
-            prevShape.push({x:state[index].x,y:state[index].y});    
-        }
-        this.#prevShape.push(prevShape);
-        this.#current.state = state;
       }
 
       create(){
-        this.#current = {x: parseInt(x/2),y:0,state:{},shape:0,pos:0};
-        this.pos();
-        console.log(this.#current);
-      }
-      process(move){
-        //37 좌
-        //38 상
-        //39 우
-        //40 하
-        switch (move) {
-          case 37:
-            this.#current.x + 1;
-            break;
-          case 38:
-            this.pos();
-            break;
-          case 39:
-            this.#current.x - 1;
-            break;
-          case 40:
-            this.#current.y + 1;
-            this.render();
-            break;
-          default:
-            this.#current.y + 1;
-            break;
+        //기존상태 블럭으로
+        try {
+          if(this.#current.state)
+          for (let index = 0; index < 4; index++) {
+                this.#view[this.#current.state[index].y][this.#current.state[index].x] = 1;
+          }
+        } catch (error) {
+          console.log("끝");
         }
+
+        this.#prevShape = [];
+        this.#current = {x: parseInt(this.#x/2),y:0,state:{},shape:0,pos:0};
+        this.pos();
+
+        let viewChekc = 0;
+        for(let i = 0;i<this.#y;i++){
+
+          for(let j = 0;j<this.#x;j++){
+            if(this.#view[i][j] == 1 || this.#view[i][j] == 2)
+              viewChekc += 1;
+          }
+          if(viewChekc == this.#x){
+            this.#view.splice(i, 1);
+            let addArr = [];
+            for(let j = 0;j<this.#x;j++){
+              addArr.push(0);
+            }
+            this.#view.unshift(addArr);
+          }
+          viewChekc = 0;
+        }
+
+      }
+      process(xy){
+
         //체크성공 가정
-        let current = this.#current.state;
+        if(this.move(xy)){
+          this.create();
+        };
+
+        
+        //계산후 땅이면 생성
+        this.render();
+      }
+
+      move(xy){
+        //현재상태 복사
+        //복사된 값으로 체크
+        //복사된값 문제 있을시 리턴
+        //문제없을시 view에 값 넣음.
+        this.#currentCopy = JSON.parse(JSON.stringify(this.#current));//느림
+        let currentCopy = this.#currentCopy;
+        let shape = JSON.parse(JSON.stringify(this.#shape));//느림
+        let state = shape[this.#currentCopy.shape][this.#currentCopy.pos];
+        this.#currentCopy.state = state;
+        let prevShape = [];
+        for (let index = 0; index < 4; index++) {
+          currentCopy.state[index].x += xy.x + this.#current.x;
+          currentCopy.state[index].y += xy.y + this.#current.y;
+            //상태 저장
+            prevShape.push({x:currentCopy.state[index].x,y:currentCopy.state[index].y});    
+        }
+        for (let index = 0; index < 4; index++) {
+          if(currentCopy.state[index].x>=this.#x){
+            return false;
+          }else if(currentCopy.state[index].x<0){
+            return false;
+          }else if(currentCopy.state[index].y>=this.#y){
+            return true;
+          }else if(this.#view[currentCopy.state[index].y][currentCopy.state[index].x] == 1){
+            if(xy.x != 0 && xy.y == 0)
+              return false;
+            return true;
+          }
+            //상태 저장
+            prevShape.push({x:currentCopy.state[index].x,y:currentCopy.state[index].y});    
+        }
+        this.#prevShape.push(prevShape);
+        this.#current = JSON.parse(JSON.stringify(currentCopy));//느림
+        this.#current.x +=  xy.x;
+        this.#current.y +=  xy.y;
         let sw = 0;
         for (let index = 0; index < 4; index++) {
           if(this.#prevShape.length>1){
@@ -166,12 +252,9 @@
           this.#prevShape.shift();
         }
         for (let index = 0; index < 4; index++) {
-          this.#view[current[index].y][current[index].x] = 1;
+          this.#view[this.#current.state[index].y][this.#current.state[index].x] = 2;
         }
 
-        
-        //계산후 땅이면 생성
-        this.render();
       }
 
       render = () =>{
@@ -184,8 +267,9 @@
               cell.innerHTML = '<div class="block empty"></div>';
             }else if(this.#view[i][j] == 1){
               cell.innerHTML = '<div class="block notEmpty"></div>';
+            }else if(this.#view[i][j] == 2){
+              cell.innerHTML = '<div class="block notEmpty"></div>';
             }else{
-              console.log(this.#view);
               throw new Error("예외적인");
             }
             row.appendChild(cell);
@@ -193,17 +277,45 @@
           this.#tableBody.appendChild(row);
         }
       }
-
     }
 
-    let ui =  new UI(x,y);
-    // let timerId = setInterval(function() {
-    //       ui.process();
-    // }, 1000);
+    let ui =  new UI(x,15);
+      let timerId = setInterval(function() {
+            ui.process({x:0,y:1});
+      }, 1000);
 
       document.onkeyup=function(){
-          ui.process(event.keyCode);
-        };
+        evet(event.keyCode);
+      };
+
+      function evet(event) {
+        let xy = {x:0,y:0};
+        switch (event) {
+          case 32:
+            xy.y += 1;
+            ui.process(xy);
+          break;
+          case 37:
+            xy.x -= 1;
+            break;
+          case 38:
+            ui.pos();
+            break;
+          case 39:
+            xy.x += 1;
+            break;
+          case 40:
+            xy.y += 1;
+            break;
+          default:
+            xy.y += 1;
+            break;
+        }
+        ui.process(xy);
+      }
+        
+
+
   </script>
   
 </body>
