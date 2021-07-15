@@ -279,10 +279,10 @@
       }
     }
 
-    let ui =  new UI(x,y);
-    //  let timerId = setInterval(function() {
-    //        ui.process({x:0,y:1});
-    //  }, 1000);
+    let ui =  new UI(x,15);
+      let timerId = setInterval(function() {
+            ui.process({x:0,y:1});
+      }, 1000);
 
       document.onkeyup=function(){
         evet(event.keyCode);
