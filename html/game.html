@@ -285,7 +285,7 @@
             return true;
           }
             //상태 저장
-            prevShape.push({x:currentCopy.state[index].x,y:currentCopy.state[index].y});    
+            // prevShape.push({x:currentCopy.state[index].x,y:currentCopy.state[index].y});    
         }
         this.#prevShape.push(prevShape);
         this.#current = JSON.parse(JSON.stringify(currentCopy));//느림
