@@ -199,7 +199,7 @@
         }
 //Math.floor(Math.random() * 7)
         this.#prevShape = [];
-        this.#current = {x: parseInt(this.#x/2),y:0,state:{},shape:6,pos:0};
+        this.#current = {x: parseInt(this.#x/2),y:0,state:{},shape:Math.floor(Math.random() * 7),pos:0};
         this.pos();
 
         let viewChekc = 0;
